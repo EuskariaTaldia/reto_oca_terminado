@@ -6,5 +6,22 @@ use Illuminate\Http\Request;
 
 class ImprimirController extends Controller
 {
-    //
+
+    public function getGaleria() {
+        return view('imprimir.galeria');
+    }
+
+    public function getInformacion() {
+        return view('imprimir.informacion');
+    }
+    
+
+    public function getPreguntas() {
+        return view('imprimir.preguntas');
+    }
+
+
+    public function getTablero() {
+        return view('imprimir.tablero');
+    }
 }
