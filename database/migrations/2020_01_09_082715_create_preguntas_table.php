@@ -15,6 +15,7 @@ class CreatePreguntasTable extends Migration
     {
         Schema::create('preguntas', function (Blueprint $table) {
             $table->bigIncrements('codPregun');
+            $table->primary('codPregun');
             $table->string('resCorre');
             $table->string('resFall1');
             $table->string('resFall1');

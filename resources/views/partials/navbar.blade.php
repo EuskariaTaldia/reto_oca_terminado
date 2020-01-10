@@ -22,16 +22,7 @@
                         <span class="glyphicon glyphicon-film" aria-hidden="true"></span> Juego
                     </a>
                 </li>
-
-                <li class="nav-item dropdown {{ Request::is('imprimir') && ! Request::is('imprimir/informacion')? 'active' : ''}}">
-                    <button class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Galeria </button>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{url('/imprimirGaleria')}}">Informacion</a>
-                        <a class="dropdown-item" href="{{url('/imprimirPreguntas')}}">Preguntas</a>
-                    </div>
-                </li>
-
+                
                 <li class="nav-item dropdown  {{ Request::is('imprimir') && ! Request::is('imprimir/informacion')? 'active' : ''}}">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Dropdown
@@ -48,7 +39,7 @@
                 {{-- Esto solo tiene que aparecer cuando esta logeado --}}
                 @if(Auth::check())
                     <li class="nav-item {{  Request::is('peticion/crear') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/peticionMujeres')}}">
+                        <a class="nav-link" href="{{url('/crearPeticion')}}">
                             <span>&#10010</span> Añadir mujer
                         </a>
                     </li>
@@ -57,7 +48,7 @@
                 {{-- Esto solo tiene que aparecer cuando esta logeado el ADMIN --}}
                 @if(Auth::check())
                     <li class="nav-item {{  Request::is('peticion/tabla') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/peticiones')}}"> Gestionar peticiones </a>
+                        <a class="nav-link" href="{{url('/tablaPeticiones')}}"> Gestionar peticiones </a>
                     </li>
                 @endif                
 

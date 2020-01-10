@@ -15,8 +15,16 @@ class CreatePeticionesTable extends Migration
     {
         Schema::create('peticiones', function (Blueprint $table) {
             $table->bigIncrements('codPeti');
-            $table->string('nombrePeti');
-            $table->string('datosPeti');
+            $table->primary('codPeti');
+            $table->string('nombre');
+            $table->string('fechas');
+            $table->string('subarea');
+            $table->text('datos');
+            $table->text('datos_eus');
+            $table->text('datos_ing');
+            $table->string('enlace');
+            $table->string('zona');
+            $table->string('fotografia');         
             $table->string('codUsu')->unique();
 
             // Relaciones

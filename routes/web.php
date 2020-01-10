@@ -28,12 +28,12 @@
     Route::get('/imprimirGaleria', 'ImprimirController@getGaleria');
     Route::get('/imprimirInformacion', 'ImprimirController@getInformacion');
     Route::get('/imprimirPreguntas', 'ImprimirController@getPreguntas');
-    Route::get('/imprimirTablero', 'ImprimirController@getTablero');
+    Route::post('/imprimirTablero', 'ImprimirController@getTablero');
 
 
     // Rutas de las peticiones
     Route::get('/crearPeticion', 'PeticionController@getFormulario');
-    Route::get('/verPeticiones', 'PeticionController@getTabla');
+    Route::get('/tablaPeticiones', 'PeticionController@getTabla');
 
 
 
