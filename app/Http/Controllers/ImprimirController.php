@@ -21,7 +21,12 @@ class ImprimirController extends Controller
     }
 
 
-    public function getTablero() {
+    public function getTablero(Request $request) {
+        $gameType = $request->input('gameType');
+        $gameType = $request->input('gameType');
+        $gameType = $request->input('gameType');
+
         return view('imprimir.tablero');
     }
+
 }

@@ -15,6 +15,7 @@ class CreateMujeresTable extends Migration
     {
         Schema::create('mujeres', function (Blueprint $table) {
             $table->bigIncrements('codMujer');
+            $table->primary('codMujer');
             $table->integer('codArea')->unique();
             $table->string('nombre');
             $table->string('fechas');

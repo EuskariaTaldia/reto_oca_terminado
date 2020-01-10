@@ -39,7 +39,7 @@
                 {{-- Esto solo tiene que aparecer cuando esta logeado --}}
                 @if(Auth::check())
                     <li class="nav-item {{  Request::is('peticion/crear') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/peticionMujeres')}}">
+                        <a class="nav-link" href="{{url('/crearPeticion')}}">
                             <span>&#10010</span> Añadir mujer
                         </a>
                     </li>
@@ -48,7 +48,7 @@
                 {{-- Esto solo tiene que aparecer cuando esta logeado el ADMIN --}}
                 @if(Auth::check())
                     <li class="nav-item {{  Request::is('peticion/tabla') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/peticiones')}}"> Gestionar peticiones </a>
+                        <a class="nav-link" href="{{url('/tablaPeticiones')}}"> Gestionar peticiones </a>
                     </li>
                 @endif                
 

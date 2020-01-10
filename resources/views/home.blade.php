@@ -10,7 +10,7 @@
                 </div>
 
 
-                <form method="POST" action="{{ url('/ImprimirTablero') }}">
+                <form method="POST" action="{{url('/imprimirTablero')}}">
                     @csrf
 
                     <div class="modal-body">
@@ -25,8 +25,8 @@
                                     </div>
 
                                     <div class="custom-select rbJugadores">
-                                        <input type="radio" name="option" value="conPreguntas" checked> Con Preguntas<br>
-                                        <input type="radio" name="option" value="sinPreguntas"> Sin Preguntas<br>
+                                        <input type="radio" name="gameType" value="conPreguntas" checked> Con Preguntas<br>
+                                        <input type="radio" name="gameType" value="sinPreguntas"> Sin Preguntas<br>
                                     </div>
                                 </div>
 
@@ -36,7 +36,6 @@
                                     <div class="input-group-prepend">
                                         <label class="input-group-text">Filtro</label>
                                     </div>
-
                                     <select class="custom-select" required>
                                         <option selected>Elige la opción</option>
                                         {{-- Aqui deberia de ir un select a la base de datoss --}}
@@ -53,7 +52,6 @@
                                     <div class="input-group-prepend">
                                         <label class="input-group-text">Especificacion</label>
                                     </div>
-
                                     <select class="custom-select" required>
                                         <option selected>Elige la opción</option>
                                         {{-- Aqui deberia de ir un select que depende el anterior --}}
@@ -76,12 +74,9 @@
                             </div>
                         </div>
 
-
-                    </div>
-
                     <div class="modal-footer">
-                        <button type="button submit" class="btn btn-primary">Jugar</button>
-                        <button type="button reset" class="btn btn-secondary" data-dismiss="modal">Borrar</button>
+                        <button type="submit" class="btn btn-primary">Jugar</button>
+                        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Borrar</button>
                     </div>
                 </div>
             </form>

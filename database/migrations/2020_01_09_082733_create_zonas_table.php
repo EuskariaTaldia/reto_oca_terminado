@@ -15,6 +15,7 @@ class CreateZonasTable extends Migration
     {
         Schema::create('zonas', function (Blueprint $table) {
             $table->bigIncrements('codZona');
+            $table->primary('codZona');
             $table->string('zona');
             $table->string('zona_ing');
             $table->string('zona_eus');
