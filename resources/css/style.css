@@ -22,6 +22,10 @@
     position: relative;
 }
 
+.myForm {
+    background-color: transparent;
+}
+
 .logo {
     width: 30%;
 }
@@ -82,7 +86,7 @@ form {
 }
 
 form label {
-    width: 72px;
+    width: 100%;
     font-weight: bold;
     display: inline-block;
 }
@@ -124,6 +128,7 @@ textarea {
     display: block;
 }
 */
+
 
 /* LOGIN */
 body {
@@ -192,7 +197,7 @@ body {
 }
 
 .register-info-box {
-    width: 30%;
+    width: 40%;
     padding: 0 50px;
     top: 20%;
     right: 0;
@@ -300,7 +305,7 @@ body {
     width: 100%;
 }
 
-.row {
+.myRow {
     margin-right: 0px;
     margin-left: 0px;
 }
@@ -311,14 +316,9 @@ body {
     background-color: black;
 }
 
-.row {
-    margin-right: 0px;
-    margin-left: 0px;
-}
-
-label, h2 {
+/* label, h2 {
     color: white;
-}
+} */
 
 .fondo {
     background-image: url(images/fondo2.png);

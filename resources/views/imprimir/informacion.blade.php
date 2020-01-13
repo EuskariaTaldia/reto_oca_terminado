@@ -4,7 +4,7 @@
 
     <h2>Informacion mujeres: <h2>
 
-    <div class="fondoInfo row">
+    <div class="fondoInfo row myRow">
         <div class="col-lg-4 col-md-12">
             {{-- TODO: La Imagen de la película --}}
             @if($mujer->fotografia==null)

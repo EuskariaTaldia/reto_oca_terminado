@@ -4,9 +4,25 @@ function iniciar() {
     var modal = document.getElementById('myModal')
     if (modal != null) {
         modal.style.display = 'block';
+        
+        // Comprobar si el valor del filtro cambia
+        document.getElementById("filtro").addEventListener("change", nuevoValor);
     }
 
 
+    // Codigo para el login
+    login();    
+
+}
+
+
+function nuevoValor() {
+    var filtro = document.getElementById("filtro").value;   
+    
+}
+
+
+function login() {
     $(document).ready(function () {
         $('.login-info-box').fadeOut();
         $('.login-show').addClass('show-log-panel');

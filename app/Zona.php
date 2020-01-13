@@ -8,9 +8,14 @@ class Zona extends Model
 {
 
     // Nombre tabla
-    protected $table = 'zonas';
+    protected $table = 'zona';
 
     // Primay key de la tabla
     protected $primaryKey = 'codZona';
     
+    // Relaciones
+    public function mujer() {
+        return $this->hasOne('App\Mujer');
+    }
+
 }

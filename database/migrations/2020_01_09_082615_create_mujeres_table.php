@@ -32,8 +32,6 @@ class CreateMujeresTable extends Migration
             // Relaciones
             $table->foreign('codArea')->references('codArea')->on('areas');
             $table->foreign('codZona')->references('codZona')->on('zonas');
-
-
         });
     }
 
@@ -46,4 +44,6 @@ class CreateMujeresTable extends Migration
     {
         Schema::dropIfExists('mujeres');
     }
+
+
 }

@@ -24,6 +24,8 @@
         return view('myLogin');
     });
 
+    
+
     // Rutas para imprimir cartas
     Route::get('/imprimirGaleria', 'ImprimirController@getGaleria');
     Route::get('/imprimirInformacion/{codMujer}', 'ImprimirController@getInformacion');

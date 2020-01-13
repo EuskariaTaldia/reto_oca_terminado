@@ -13,8 +13,9 @@ class ImprimirController extends Controller
         $mujeres = Mujer::all();
 
         return view('imprimir.galeria', ["arraymujeres" => $mujeres]);
-        }
+    }
 
+    
     public function getInformacion($id){
         $mujer = Mujer::findOrFail($id);
 
@@ -32,10 +33,11 @@ class ImprimirController extends Controller
 
     public function getTablero(Request $request) {
         $gameType = $request->input('gameType');
-        $gameType = $request->input('gameType');
-        $gameType = $request->input('gameType');
+        $filtro = $request->filtro;
+        $especificacion = $request->especificacion;
+        $jugador = $request->input('jugador');
 
-        return view('imprimir.tablero');
+        return view('imprimir.tablero', ["gameType" => $gameType], ["filtro" => $filtro], ["especificacion" => $especificacion], ["jugador" => $jugador]);
     }
 
 }

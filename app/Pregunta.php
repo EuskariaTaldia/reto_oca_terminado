@@ -12,4 +12,10 @@ class Pregunta extends Model
     // Primay key de la tabla
     protected $primaryKey = 'codPregun';
 
+
+    // Relaciones
+    public function mujer() {
+        return $this->hasOne('App\Mujer');
+    }
+
 }

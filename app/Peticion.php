@@ -15,4 +15,5 @@ class Peticion extends Model
     // No necesitamos tener 
     public $timestamps = false;
 
+
 }

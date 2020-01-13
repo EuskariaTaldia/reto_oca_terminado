@@ -46,7 +46,7 @@
                 @endif
 
                 {{-- Esto solo tiene que aparecer cuando esta logeado el ADMIN --}}
-                @if(Auth::check())
+                @if(Auth::check() && Auth::user()->admin==1)
                     <li class="nav-item {{  Request::is('peticion/tabla') ? 'active' : ''}}">
                         <a class="nav-link" href="{{url('/tablaPeticiones')}}"> Gestionar peticiones </a>
                     </li>
@@ -58,6 +58,7 @@
                 <li class="nav-item">
                     {{-- Comprobamos si el usuario esta iniciado --}}
                     @if(Auth::check())
+                        <h6>{{ $usuario ?? '' }}</h6>
                         <form action="{{ url('/logout') }}" method="POST" style="display:inline" class="navForm">
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-link nav-link" style="display:inline;cursor:pointer">
