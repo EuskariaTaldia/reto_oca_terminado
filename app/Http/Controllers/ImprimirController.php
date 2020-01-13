@@ -3,21 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mujer;
+use App\Pregunta;
 
 class ImprimirController extends Controller
 {
 
     public function getGaleria() {
-        return view('imprimir.galeria');
-    }
+        $mujeres = Mujer::all();
 
-    public function getInformacion() {
-        return view('imprimir.informacion');
+        return view('imprimir.galeria', ["arraymujeres" => $mujeres]);
+        }
+
+    public function getInformacion($id){
+        $mujer = Mujer::findOrFail($id);
+
+        return view('imprimir.informacion', ['mujer'=> $mujer]);
     }
     
 
     public function getPreguntas() {
-        return view('imprimir.preguntas');
+        $preguntas = Pregunta::all();
+        $mujeres = Mujer::all();
+
+        return view('imprimir.preguntas', ["arraypreguntas" => $preguntas], ["arraymujeres" => $mujeres]);
     }
 
 

@@ -26,7 +26,7 @@
 
     // Rutas para imprimir cartas
     Route::get('/imprimirGaleria', 'ImprimirController@getGaleria');
-    Route::get('/imprimirInformacion', 'ImprimirController@getInformacion');
+    Route::get('/imprimirInformacion/{codMujer}', 'ImprimirController@getInformacion');
     Route::get('/imprimirPreguntas', 'ImprimirController@getPreguntas');
     Route::post('/imprimirTablero', 'ImprimirController@getTablero');
 

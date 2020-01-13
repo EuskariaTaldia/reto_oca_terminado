@@ -66,80 +66,67 @@
     float: right;
 }
 
-/* GALERIA  */
-
-.cuadrado {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-}
-
-.navForm {
-    margin: auto !important;
-    display: inline !important;
-    background-color: transparent !important;
-}
 
 /* CREAR PETICION */
 
-/* *{box-sizing:border-box;}
+* {
+    box-sizing: border-box;
+}   
 
-form{
-	width:350px;
-	padding:16px;
-	border-radius:10px;
-	margin:auto;
-	background-color:#ccc;
+form {
+    width: 350px;
+    padding: 16px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #ccc;
 }
 
-form label{
-	width:72px;
-	font-weight:bold;
-	display:inline-block;
+form label {
+    width: 72px;
+    font-weight: bold;
+    display: inline-block;
 }
 
-form input[type="text"],form input[type="file"]{
-	width:180px;
-	padding:3px 10px;
-	border:1px solid #f6f6f6;
-	border-radius:3px;
-	background-color:#f6f6f6;
-	margin:8px 0;
-	display:inline-block;
+form input[type="text"],
+form input[type="file"] {
+    width: 180px;
+    padding: 3px 10px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+    display: inline-block;
 }
 
-form input[type="submit"]{
-	width:100%;
-	padding:8px 16px;
-	margin-top:32px;
-	border:1px solid #000;
-	border-radius:5px;
-	display:block;
-	color:#fff;
-	background-color:#000;
+form input[type="submit"] {
+    width: 100%;
+    padding: 8px 16px;
+    margin-top: 32px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: block;
+    color: #fff;
+    background-color: #000;
 }
 
-form input[type="submit"]:hover{
-	cursor:pointer;
+form input[type="submit"]:hover {
+    cursor: pointer;
 }
 
-textarea{
-	width:100%;
-	height:100px;
-	border:1px solid #f6f6f6;
-	border-radius:3px;
-	background-color:#f6f6f6;
-	margin:8px 0;
-	resize:none;
-	display:block;
-} */
+textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #f6f6f6;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    margin: 8px 0;
+    resize: none;
+    display: block;
+}
+*/
 
 /* LOGIN */
-/* body {
+body {
     font-family: "Mukta", sans-serif;
     height: 100vh;
     min-height: 550px;
@@ -148,8 +135,7 @@ textarea{
     background-position: center;
     position: relative;
     overflow-y: hidden;
-} */
-
+}
 
 .login-reg-panel {
     position: relative;
@@ -183,7 +169,6 @@ textarea{
     display: none;
 }
 
-
 .login-reg-panel #label-login,
 .login-reg-panel #label-register {
     border: 1px solid #9e9e9e;
@@ -208,7 +193,7 @@ textarea{
 
 .register-info-box {
     width: 30%;
-    /* padding: 0 50px; */
+    padding: 0 50px;
     top: 20%;
     right: 0;
     position: absolute;
@@ -229,10 +214,12 @@ textarea{
     text-align: left;
     padding: 50px;
 }
+
 .show-log-panel {
     display: block;
     opacity: 0.9;
 }
+
 .login-show input[type="text"],
 .login-show input[type="email"],
 .login-show input[type="password"] {
@@ -243,6 +230,7 @@ textarea{
     border: 1px solid #b5b5b5;
     outline: none;
 }
+
 .logBtn {
     max-width: 150px;
     width: 100%;
@@ -256,6 +244,7 @@ textarea{
     cursor: pointer;
     margin-top: 5%;
 }
+
 .login-show a {
     display: inline-block;
     padding: 10px 0;
@@ -271,6 +260,7 @@ textarea{
     border: 1px solid #b5b5b5;
     outline: none;
 }
+
 .logBtn {
     max-width: 150px;
     width: 100%;
@@ -283,6 +273,7 @@ textarea{
     float: right;
     cursor: pointer;
 }
+
 .credit {
     position: absolute;
     bottom: 10px;
@@ -296,4 +287,104 @@ textarea{
     font-weight: bold;
     letter-spacing: 1px;
     z-index: 99;
+}
+
+
+/* INFORMACION */
+.impFotoMujer {
+    width: 400px;
+}
+
+.fondoInfo {
+    background-color: aquamarine;
+    width: 100%;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+
+/* GALERIA */
+.fondoFiltrado {
+    background-color: black;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+label, h2 {
+    color: white;
+}
+
+.fondo {
+    background-image: url(images/fondo2.png);
+    /* opacity: 0.5; */
+}
+
+.cuadrado {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.cartamujer {
+    width: 250px;
+}
+
+.historia {
+    background-color: #bf8000 !important;
+}
+
+.derecho {
+    background-color: white !important;
+}
+
+.antropologia {
+    background-color: #ff8000 !important;
+}
+
+.geografia {
+    background-color: #e30400 !important;
+}
+
+.filosofia {
+    background-color: #780053 !important;
+}
+
+.psicologia {
+    background-color: #004cb0 !important;
+}
+
+.economia {
+    background-color: #ff6171 !important;
+}
+
+.sociologia {
+    background-color: #ffea00 !important;
+}
+
+.pedagogia {
+    background-color: #1aab00 !important;
+}
+
+.imagenMujer {
+    height: 200px;
+}
+
+.colorLetra {
+    color: black;
+}
+
+.columnas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
