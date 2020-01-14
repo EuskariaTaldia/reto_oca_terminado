@@ -13,9 +13,7 @@
     Auth::routes();
 
     // Ruta del inicio
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/',  'HomeController@getWelcome');
 
     // Ruta de la pagina inicial
     Route::get('/home', 'HomeController@getIndex');
@@ -26,16 +24,39 @@
 
 
 
+
     // Rutas para imprimir cartas
     Route::get('/imprimirGaleria', 'ImprimirController@getGaleria');
     Route::get('/imprimirInformacion/{codMujer}', 'ImprimirController@getInformacion');
     Route::get('/imprimirPreguntas', 'ImprimirController@getPreguntas');
     Route::post('/imprimirTablero', 'ImprimirController@getTablero');
 
+    // Solo cuando estas identificado tiene que aparecer estas rutas
+    Route::group(['middleware ' => 'auth'], function () {
 
-    // Rutas de las peticiones
-    Route::get('/crearPeticion', 'PeticionController@getFormulario');
-    Route::get('/tablaPeticiones', 'PeticionController@getTabla');
- 
+        Route::GET('/crearPeticion', function(){
+            // Comprobamos si el usuario esta logeado
+            if(Auth::check()){
+                return redirect()->route('login');
+                
+            } else {
+                return view('myLogin');
+            }
+        });
+
+        Route::GET('/tablaPeticiones', function(){
+            // Comprobamos si el usuario esta logeado como ADMIN
+            if(Auth::check()){
+                return redirect()->route('login');
+                
+            } else {
+                return view('myLogin');
+            }
+        });
+
+        Route::get('/tablaPeticiones', 'PeticionController@getFormulario');
+        Route::get('/tablaPeticiones', 'PeticionController@getTabla');
+
+    });
 
 ?>

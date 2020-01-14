@@ -37,10 +37,24 @@
             </span>
         @enderror
 
-
         <label for="zona">Zona geografica</label>
-        <input type="text" class="form-control @error('zona') is-invalid @enderror" name="zona" autofocus/>
-        @error('zona')
+        <select class="form-control @error('zona') is-invalid @enderror" name="zona" id="zona" autofocus>
+            @foreach ($arrayZonas as $zonas)
+                @if ($zonas['codZona'] != 0)
+                    <option value="{{$zonas['codZona']}}">{{$zonas['zona']}}</option>
+                @endif
+            @endforeach                
+        </select>
+        @error('pais')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+
+
+        <label for="pais">Pais</label>
+        <input type="text" class="form-control @error('pais') is-invalid @enderror" name="pais" autofocus/>
+        @error('pais')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>

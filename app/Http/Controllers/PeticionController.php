@@ -33,7 +33,7 @@ class PeticionController extends Controller
         $peticion->subarea = $request->subArea;
         $peticion->datos = $request->información;
         $peticion->enlace = $request->enlace;
-        $peticion->codZona = $request->zona;
+        $peticion->codZona = $request->pais;
         $peticion->zona = $request->zona;
         $peticion->fotografia = $request->foto;
 
