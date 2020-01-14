@@ -12,7 +12,11 @@ class PeticionController extends Controller
     }
 
     public function getTabla() {
-        return view('peticion.tabla');
+
+        $peticion = peticion::all();
+
+
+        return view('peticion.tabla',["arraypeticiones" => $peticion]);
     }
         // recoger datos para insertar en la base de datos
     public function store(request $request){
