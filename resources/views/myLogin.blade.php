@@ -21,7 +21,7 @@
             <div class="login-show">
                 <h2>INICIAR SESION</h2>
 
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('login') }}" class="logForm">
                     @csrf
 
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="email" autofocus placeholder="Email">
@@ -49,7 +49,10 @@
 
                     <a href="">¿Has olvidado la contraseña?</a>
 
-                    <button type="submit" class="btn btn-dark logBtn"> ENTRAR </button>                               
+                    <div class="flexBtn">
+                        <button type="reset" class="btn btn-dark logBtn"> BORRAR </button>                               
+                        <button type="submit" class="btn btn-dark logBtn"> ENTRAR </button>    
+                    </div>      
                 </form>
             </div>
 
@@ -58,7 +61,7 @@
             <div class="register-show">
                 <h2>CREAR CUENTA</h2>
 
-                <form method="GET" action="{{ route('register') }}">
+                <form method="GET" action="{{ route('register') }}" class="logForm">
                     @csrf
 
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nombre">
@@ -83,8 +86,11 @@
                         @enderror
 
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirmar Contraseña">
-
-                    <button type="submit" class="btn btn-dark logBtn"> CREAR CUENTA </button>                               
+                    
+                    <div class="flexBtn">
+                        <button type="reset" class="btn btn-dark logBtn"> BORRAR </button>                               
+                        <button type="submit" class="btn btn-dark logBtn"> ENTRAR </button>    
+                    </div>                                    
                 </form>
             </div>
         </div>

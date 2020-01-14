@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
 
         <div class="logoDiv">
@@ -59,20 +59,21 @@
                     {{-- Comprobamos si el usuario esta iniciado --}}
                     @if(Auth::check())
                         <h6>{{ $usuario ?? '' }}</h6>
-                        <form action="{{ url('/logout') }}" method="POST" style="display:inline" class="navForm">
+                        <form action="{{ url('/logout') }}" method="POST" class="navForm">
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-link nav-link" style="display:inline;cursor:pointer">
+                            <button type="submit" class="btn btn-link nav-link">
                                 Cerrar sesión
                             </button>
                         </form>
                         
                     @else        
                                     
-                        <form action="{{ url('/myLogin') }}" method="POST" style="display:inline" class="navForm">
+                        <form action="{{ url('/myLogin') }}" method="POST" class="navForm loginBtn">
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-link nav-link" style="display:inline;cursor:pointer">
+                            <button type="submit" class="btn btn-link nav-link fa fa-user">
                                 Iniciar sesión
                             </button>
+                           
                         </form>                    
 
                     @endif

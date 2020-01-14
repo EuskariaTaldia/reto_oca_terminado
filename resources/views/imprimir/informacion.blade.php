@@ -1,8 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
-
-    <h2>Informacion mujeres: <h2>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="{{url('/imprimirGaleria')}}">Galeria</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Informacion</li>
+        </ol>
+    </nav>
 
     <div class="fondoInfo row myRow">
         <div class="col-lg-4 col-md-12">
@@ -23,8 +28,7 @@
             <h5>Zona:{{$mujer->zona}}</h5>
             <h5> Datos:</h5><p> {{$mujer->datos}}</p>
 
-            <a href="{{ url('galeria')}} " class="btn btn-secondary">< Volver a la Galeria</a> 
-            <a class="btn btn-dark" href="{{$mujer->enlace}}">Fuente</a>
+            <a class="btn btn-secondary" href="{{$mujer->enlace}}">Fuente</a>
             <input class="btn btn-dark" type="button" name="imprimir" value="Imprimir Datos" onclick="window.print();">
         </div>
     </div>    
