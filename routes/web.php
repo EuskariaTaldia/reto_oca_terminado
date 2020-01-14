@@ -14,7 +14,7 @@
 
     // Ruta del inicio
     Route::get('/', function () {
-        return view('welcome');        
+        return view('welcome');
     });
 
     // Ruta de la pagina inicial
@@ -24,7 +24,7 @@
         return view('myLogin');
     });
 
-    
+
 
     // Rutas para imprimir cartas
     Route::get('/imprimirGaleria', 'ImprimirController@getGaleria');
@@ -36,7 +36,7 @@
     // Rutas de las peticiones
     Route::get('/crearPeticion', 'PeticionController@getFormulario');
     Route::get('/tablaPeticiones', 'PeticionController@getTabla');
-
+ 
 
 
 
