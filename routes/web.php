@@ -38,7 +38,4 @@
     Route::get('/tablaPeticiones', 'PeticionController@getTabla');
  
 
-
-
-
 ?>
