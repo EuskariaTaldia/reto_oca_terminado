@@ -25,19 +25,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function getIndex()
-    {
-        // auth()->user()->name;
+    public function getIndex() {
         if(Auth::check() ) {
             $usuario = Auth::user()->name;
-        } else{
+        } else {
             $usuario = "anonimo";
         }
 
         $arrayZonas = Zona::all();
         $arrayAreas = Area::all();
-      
-        return view('home', ["usuario" => $usuario], ["zonas" => $arrayZonas], ["areas" => $arrayAreas]);
+              
+        return view('home', compact("usuario", "arrayAreas", "arrayZonas"));
     }
+
 
 }

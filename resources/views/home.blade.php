@@ -38,39 +38,30 @@
                                     </div>
                                     
                                     <select class="custom-select" name="filtro" id="filtro" required>
-                                        <option selected>Elige la opción</option>
                                         {{-- Aqui deberia de ir un select a la base de datoss --}}
-                                        <option value="1">Al azar</option>
-                                        <option value="2">Campo</option>
-                                        <option value="3">Geografico</option>
+                                        <option value="azar" selected>Al azar</option>
+                                        <option value="campo">Campo</option>
+                                        <option value="zona">Geografico</option>
                                         <option value="4">Siglo</option>
                                     </select>
                                 </div>
 
-                                
 
                                 {{-- ESPECIFICACION --}}
-                                <div class="input-group mb-3" >
+                                <div class="input-group mb-3" id="especificacion" style="display:none;">
                                     <div class="input-group-prepend">
                                         <label class="input-group-text">Especificacion</label>
                                     </div>
 
-                                    <select class="custom-select" name="especificacion" required>
-                                        <option selected>Elige la opción</option>
-                                    
-                                    {{-- @if (filtro[1]) 
-                                        
-                                    @elseif ()
-                                
-                                    @endif --}}
+                                    <input type="hidden" id="arrayAreas" name="arrayAreas" value="{{$arrayAreas}}">
+                                    <input type="hidden" id="arrayZonas" name="arrayZonas" value="{{$arrayZonas}}">
 
+
+                                    <select class="custom-select" name="especificacionSelect" id="especificacionSelect" required>
 
                                         {{-- Aqui deberia de ir un select que depende el anterior --}}
-                                        <option value="1">Al azar</option>
-                                        <option value="2">Campo</option>
-                                        <option value="3">Geografico</option>
-                                        <option value="4">Siglo</option>
-                                    </select>
+                                   
+                                    </select> 
                                 </div>
 
 
@@ -79,7 +70,7 @@
                                     <div class="input-group-prepend">
                                         <label class="input-group-text">Jugadores</label>
                                     </div>
-
+                
                                     <input type="number" class="custom-select inputJugadores" min="1" max="5" value="1" name="jugador" required>
                                 </div>
                             </div>
@@ -89,6 +80,7 @@
                         <button type="reset" class="btn btn-secondary" data-dismiss="modal">Borrar</button>
                         <button type="submit" class="btn btn-primary">Jugar</button>    
                     </div>
+
                 </div>
             </form>
         </div>

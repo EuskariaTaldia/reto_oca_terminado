@@ -8,36 +8,34 @@
         <h2>Filtrado</h2>
         <div class="row myRow">
             <div class="form-group col">
-                <label for="estu">Estudios:</label>
+                <label for="estu">Estudios:</label>            
                 <select class="form-control " name=" " id="estu">
-                    <option value="SinFiltro">Sin Filtro</option>
-                    <option value="Historia">Historia</option>
-                    <option value="Derecho">Derecho</option>
-                    <option value="Antropologia">Antropología</option>
-                    <option value="Geografia">Geografía</option>
-                    <option value="Filosofia">Filosofía</option>
-                    <option value="Psicologia">Psicología</option>
-                    <option value="Economia">Economía</option>
-                    <option value="Sociologia">Sociología</option>
-                    <option value="Pedagogía">Pedagogía</option>
+                    <option value="SinFiltro" selected>Sin Filtro</option>
+
+                    @foreach ($arrayAreas as $areas)
+                        <option value="{{$areas['area']}}">{{$areas['area']}}</option>
+                    @endforeach                
                 </select>
             </div>
 
             <div class="form-group col">
                 <label for="geo">Geografico:</label>
                 <select class="form-control" id="geo">
-                    <option value="SinFiltro">Sin Filtro</option>
-                    <option value="Europa">Europa</option>
-                    <option value="Norteamerica">Norteamérica</option>
-                    <option value="AmericaLatina">América Latina</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Oceania">Oceanía</option>
-                    <option value="Africa">África</option>
+                    <option value="SinFiltro" selected>Sin Filtro</option>
+
+                    @foreach ($arrayZonas as $zonas)
+                        @if($zonas['codZona'] != 0)
+                            <option value="{{$zonas['zona']}}">{{$zonas['zona']}}</option>
+                        @endif
+                    @endforeach                
                 </select>
             </div>
         
             <div class="form-group col align-self-end">
+                <label for="geo">Fecha:</label>
+                
                 <div class="input-group">
+
                     <div class="input-group-prepend">
                         <span class="input-group-text" style="
                         padding-right: 0px;
@@ -48,6 +46,7 @@
                         border-top-width: 0px;
                         border-bottom-width: 0px;
                         border-left-width: 0px;">
+
                             <select class="custom-select" id="inputGroupSelect01">
                                 <option value="anio" selected>Año</option>
                                 <option value="siglo">Siglo</option>
@@ -89,7 +88,7 @@
         {{-- INICIO DE CARTAS --}}
         <div class="row myRow">
   
-            @foreach ($arraymujeres as $mujer)
+            @foreach ($arrayMujeres as $mujer)
                 
                 <div class="col-3 columnas">
                 

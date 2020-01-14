@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Imprimir table ro:<h2>
+    <h2>Imprimir tablero:<h2>
     <p>{{$gameType -> $filtro -> $especificacion -> $jugador}}}</p>
         
 

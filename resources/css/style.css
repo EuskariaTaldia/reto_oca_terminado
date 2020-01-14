@@ -12,6 +12,10 @@
     z-index: 0 !important;
 }
 
+.modal-title {
+   color: white;
+}
+
 .backgroundImg {
     background-size: cover;
     position: relative;
