@@ -3,37 +3,40 @@
 namespace App\Http\Controllers;
 
 use App\Peticion;
+use App\Area;
+use App\Zona;
+
 use Illuminate\Http\Request;
 
 class PeticionController extends Controller
 {
     public function getFormulario() {
-        return view('peticion.crear');
+        $arrayAreas = Area::all();
+        $arrayZonas = Zona::all();
+
+        return view('peticion.crear', compact("arrayZonas", "arrayAreas"));
     }
 
     public function getTabla() {
-
-        $peticion = peticion::all();
-
+        $peticion = Peticion::all();
 
         return view('peticion.tabla',["arraypeticiones" => $peticion]);
     }
-        // recoger datos para insertar en la base de datos
-    public function store(request $request){
-
+    
+    // Recoger datos para insertar en la base de datos
+    public function store(request $request) {
         $peticion = new Peticion;
 
+        $peticion->area = $request->area;
         $peticion->nombre = $request->nombre;
-        $peticion->subArea = $request->subArea;
-        $peticion->geografia = $request->zonaGeografica;
-        $peticion->urlFoto = $request->foto;
-        $peticion->fecha = $request->fecha;
-        $peticion->descripcion = $request->mensaje;
-        $peticion->url = $request->enlace;
+        $peticion->fechas = $request->fecha;
+        $peticion->subarea = $request->subArea;
+        $peticion->datos = $request->información;
+        $peticion->enlace = $request->enlace;
+        $peticion->codZona = $request->zona;
+        $peticion->zona = $request->zona;
+        $peticion->fotografia = $request->foto;
 
         $peticion->save();
-
-        //return redirect('home');
-
     }
 }

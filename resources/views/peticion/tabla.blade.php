@@ -13,7 +13,6 @@
             <th>mensaje</th>
             <th>fecha</th>
             <th>url</th>
-
         </tr>
 
         <tr>
