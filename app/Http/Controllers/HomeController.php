@@ -25,7 +25,7 @@ use App\Zona;
         
         public function getIndex() {
             if(Auth::check() ) {
-                $usuario = Auth::user()->name;
+                $usuario = Auth::user();
             } else {
                 $usuario = "anonimo";
             }

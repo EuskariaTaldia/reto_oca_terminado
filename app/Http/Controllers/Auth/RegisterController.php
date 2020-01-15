@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\User;
+use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {
@@ -53,7 +55,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'admin' => ['required', 'integer', 'min:1', 'confirmed'],
+            'admin' => ['required', 'integer', 'min:1', 'max:1', 'confirmed'],
 
         ]);
     }
@@ -64,16 +66,23 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'admin' => '0',
-        ]);
-        
-        redirect()->to('/home');
+        $emailDb = User::where('email', $request->email)->get();
+
+        if (!count($emailDb)) {
+            $user = new User;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = Hash::make($request['password']);
+            $user->admin = '0';
+    
+            $user->save();
+        } else {
+            // Tiene que saltar un error
+        }
+
+        return redirect()->route('home');
 
     }
 }

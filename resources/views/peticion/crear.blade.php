@@ -8,111 +8,136 @@
         </ol>
     </nav>
 
-    <h2>Formulario para la creacion de una nueva mujer:</h2>
+   
+    <section class="get-in-touch">
 
-    <form method="POST" action="" name="formDatosPersonales">
+        <h2 class="title">Inserta los datos</h2>
+
+        <form method="POST" action="" class="contact-form row">
         @csrf
+            {{-- Nombre y apellidos --}}
+            <div class="form-field col-lg-6">
+                <input id="nombreApellido" type="text" class="input-text js-input @error('nombre') is-invalid @enderror" name="nombre" required>
+                <label class="label" for="nombre">Nombre y apellido</label>
+                @error('nombre')
+                    <span class="invalid-feedback" role="alert">
+                        <strong> Caracteres invalidos </strong>
+                    </span>
+                @enderror
+            </div>
 
-        <label for="nombreApellido">Nombre y apellido</label>'
-        <input id="nombreApellido" type="text" class="form-control @error('nombre') is-invalid @enderror" name="nombre" autofocus>
-        @error('nombre')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
+             {{-- Fechas --}}
+             <div class="form-field col-lg-6">
+                <input id="fecha" type="text" class="input-text js-input @error('fecha') is-invalid @enderror" name="fecha" placeholder="Ej: 1909-1990 // VI" required>
+                <label class="fecha" for="fecha">Fecha / Siglo</label>
+                @error('fecha')
+                    <span class="invalid-feedback" role="alert">
+                        <strong> Escribe otra fecha </strong>
+                    </span>
+                @enderror
+            </div>
 
+            {{-- Area --}}
+            <div class="form-field col-lg-6">
+                <select class="input-text js-input @error('area') is-invalid @enderror" name="area" id="area" required>
+                    @foreach ($arrayAreas as $areas)
+                        <option value="{{$areas['codArea']}}">{{$areas['area']}}</option>
+                    @endforeach                
+                </select>                            
+                <label class="label" for="name">Area</label>
+                @error('area')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>Area incorrecta</strong>
+                    </span>
+                @enderror  
+            </div>
 
-        <label for="area">Area</label>        
-        <select class="form-control @error('area') is-invalid @enderror" name="area" id="area" autofocus>
-            @foreach ($arrayAreas as $areas)
-                <option value="{{$areas['codArea']}}">{{$areas['area']}}</option>
-            @endforeach                
-        </select>
-        @error('area')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-
-
-        <label for="subArea">Sub Area</label>        
-        <input id="subArea" type="text" class="form-control @error('subArea') is-invalid @enderror" name="subArea" autofocus>
-        @error('subArea')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-
-        <label for="zona">Zona geografica</label>
-        <select class="form-control @error('zona') is-invalid @enderror" name="zona" id="zona" autofocus>
-            @foreach ($arrayZonas as $zonas)
-                @if ($zonas['codZona'] != 0)
-                    <option value="{{$zonas['codZona']}}">{{$zonas['zona']}}</option>
-                @endif
-            @endforeach                
-        </select>
-        @error('pais')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-
-
-        <label for="pais">Pais</label>
-        <input type="text" class="form-control @error('pais') is-invalid @enderror" name="pais" autofocus/>
-        @error('pais')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
+            
+            {{-- Sub Area --}}
+            <div class="form-field col-lg-6 ">
+                <input id="subArea" class="input-text js-input @error('subArea') is-invalid @enderror" type="text" placeholder="(ej: Historiadora del arte)">
+                <label class="label" for="subArea">Sub Area</label>
+                @error('subArea')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>Sub area incorrecta</strong>
+                    </span>
+                @enderror
+            </div>
 
 
-        <label for="foto">Foto (URL)</label>
-        <input type="text" class="form-control @error('foto') is-invalid @enderror" name="foto" autofocus/>
-        @error('foto')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-
-        
-        <label for="fecha">Fecha</label>
-        <input type="text" class="form-control @error('fecha') is-invalid @enderror" name="fecha" placeholder="Ej: 1909-1990" autofocus/>
-        @error('fecha')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-
-        
-        <label for="información">Información</label>
-        <textarea type="text" class="form-control @error('información') is-invalid @enderror" name="información" maxlength="300" autofocus></textarea>
-        @error('información')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
+            {{-- Zona geografica --}}
+            <div class="form-field col-lg-6 ">
+                <select class="input-text js-input @error('zona') is-invalid @enderror" name="zona" id="zona">
+                    @foreach ($arrayZonas as $zonas)
+                        @if ($zonas['codZona'] != 0)
+                            <option value="{{$zonas['codZona']}}">{{$zonas['zona']}}</option>
+                        @endif
+                    @endforeach                
+                </select>
+                <label class="label" for="zona">Zona geografica</label>
+                @error('pais')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>Elige otra zona</strong>
+                    </span>
+                @enderror
+            </div>
 
 
-        <label for="enlace">Información URL</label>
-        <input type="text" class="form-control @error('enlace') is-invalid @enderror" name="enlace" autofocus/>
-        @error('enlace')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-
-        <input type="submit" name="enviar" value="Enviar datos"/>
-
-   </form>
-
+            {{-- Pais --}}
+            <div class="form-field col-lg-6 ">
+                <input type="text" class="input-text js-input @error('pais') is-invalid @enderror" name="pais"/>
+                <label class="label" for="pais">Pais</label>
+                @error('pais')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>Lugar incorrecto</strong>
+                    </span>
+                @enderror
+            </div>
 
 
+            {{-- Foto URL --}}
+            <div class="form-field col-lg-6">
+                <input type="text" class="input-text js-input @error('foto') is-invalid @enderror" name="foto"/>                                          
+                <label class="label" for="foto">Foto (URL)</label>
+                @error('foto')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>URL invalido</strong>
+                    </span>
+                @enderror
+            </div>
+
+            
+            {{-- Informacion URL --}}
+            <div class="form-field col-lg-6 ">                
+                <input type="text" class="input-text js-input @error('enlace') is-invalid @enderror" name="enlace"/>
+                <label class="label" for="enlace">Información (URL)</label>
+                 @error('enlace')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>URL invalido</strong>
+                    </span>
+                @enderror
+            </div>
 
 
+            <div class="form-field col-lg-12">
+                <textarea type="text" class="input-text js-input @error('información') is-invalid @enderror" name="información" maxlength="300" autofocus></textarea>
+                <label class="label" for="información">Información</label>
+                @error('información')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>Datos erroneos</strong>
+                    </span>
+                @enderror
+            </div>
+            
 
 
+            <div class="form-field col-lg-12">
+                <input class="submit-btn" type="reset" value="Borrar">
 
+                <input class="submit-btn" type="submit" value="Submit">
+            </div>
+        </form>
 
+     </section>  
 
 @stop

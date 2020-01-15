@@ -38,7 +38,7 @@
 
                 {{-- Esto solo tiene que aparecer cuando esta logeado --}}
                 @if(Auth::check())
-                    <li class="nav-item {{  Request::is('peticion/crear') ? 'active' : ''}}">
+                    <li class="nav-item {{ Request::is('peticion/crear') ? 'active' : ''}}">
                         <a class="nav-link" href="{{url('/crearPeticion')}}">
                             <span>&#10010</span> Añadir mujer
                         </a>
@@ -47,7 +47,7 @@
 
                 {{-- Esto solo tiene que aparecer cuando esta logeado el ADMIN --}}
                 @if(Auth::check() && Auth::user()->admin==1)
-                    <li class="nav-item {{  Request::is('peticion/tabla') ? 'active' : ''}}">
+                    <li class="nav-item {{ Request::is('peticion/tabla') ? 'active' : ''}}">
                         <a class="nav-link" href="{{url('/tablaPeticiones')}}"> Gestionar peticiones </a>
                     </li>
                 @endif                
@@ -60,9 +60,41 @@
                     @if(Auth::check())
                         <form action="{{ url('/logout') }}" method="POST" class="navForm">
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-link nav-link">
-                                Cerrar sesión -> {{$usuario ?? ''}}
-                            </button>
+                        
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle loginLink" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-user"></span> 
+                                        <strong>{{$usuario->name ?? ''}}</strong>
+                                        <span class="glyphicon glyphicon-chevron-down"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="navbar-login">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <p class="text-center">
+                                                            <span class="fa fa-user icon-size"></span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <p class="text-left"><strong>{{$usuario->name ?? ''}}</strong></p>
+                                                        <p class="text-left small">{{$usuario->email ?? ''}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <div class="navbar-login navbar-login-session">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <button type="submit" class="btn btn-danger btn-block"> Cerrar sesión </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
                         </form>
                         
                     @else        

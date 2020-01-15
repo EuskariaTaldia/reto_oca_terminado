@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Peticion;
 use App\Area;
 use App\Zona;
-
 use Illuminate\Http\Request;
 
     class PeticionController extends Controller  {
+
         public function getFormulario() {
             $arrayAreas = Area::all();
             $arrayZonas = Zona::all();
@@ -19,11 +18,11 @@ use Illuminate\Http\Request;
         public function getTabla() {
             $peticion = Peticion::all();
 
-            return view('peticion.tabla',["arraypeticiones" => $peticion]);
+            return view('peticion.tabla', ["arraypeticiones" => $peticion]);
         }
         
         // Recoger datos para insertar en la base de datos
-        public function store(request $request) {
+        public function guardar(request $request) {
             $peticion = new Peticion;
 
             $peticion->area = $request->area;
@@ -37,6 +36,9 @@ use Illuminate\Http\Request;
             $peticion->fotografia = $request->foto;
 
             $peticion->save();
+
+            return redirect()->route('home');
+
         }
     }
 ?>
