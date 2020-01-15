@@ -4,8 +4,9 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
-            <li class="breadcrumb-item"><a href="{{url('/imprimirGaleria')}}">Galeria</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Informacion</li>
+            <li class="breadcrumb-item">Galeria</li>
+            <li class="breadcrumb-item"><a href="{{url('/imprimirGaleria')}}">Informacion</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Informacion Mujer</li>
         </ol>
     </nav>
 

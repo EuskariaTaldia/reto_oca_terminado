@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Tabla PETICIONES inicializada con datos!');
         
         // Llamada al seed de los USUARIOS
-		//self::seedUsuarios();
+		self::seedUsuarios();
 		$this->command->info('Tabla USUARIOS inicializada con datos!');
     }
 

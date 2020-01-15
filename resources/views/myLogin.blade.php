@@ -61,7 +61,7 @@
             <div class="register-show">
                 <h2>CREAR CUENTA</h2>
 
-                <form method="GET" action="{{ route('register') }}" class="logForm">
+                <form method="POST" action="{{ route('register') }}" class="logForm">
                     @csrf
 
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nombre">

@@ -13,6 +13,12 @@ class Zona extends Model
     // Primay key de la tabla
     protected $primaryKey = 'codZona';
     
+    // Columnas que contiene
+    protected $fillable = [
+        'zona', 'zona_ing', 'zona_eus',
+    ];
+
+
     // Relaciones
     public function mujer() {
         return $this->hasOne('App\Mujer');

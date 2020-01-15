@@ -15,5 +15,9 @@ class Peticion extends Model
     // No necesitamos tener 
     public $timestamps = false;
 
+    // Columnas que contiene
+    protected $fillable = [
+        'nombrePeti', 'datosPeti', 'codUsu',
+    ];
 
 }

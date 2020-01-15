@@ -18,11 +18,14 @@
     // Ruta de la pagina inicial
     Route::get('/home', 'HomeController@getIndex');
 
-    Route::post('/myLogin', function () {
-        return view('myLogin');
-    });
+    // Rutas para logearte
+    Route::get('login', 'Auth\LoginController@loginForm')->name('login');
+    Route::post('login', 'Auth\LoginController@login');
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-
+    // Rutas para el registro
+    Route::get('register', 'Auth\LoginController@loginForm')->name('register');
+    Route::post('register', 'Auth\RegisterController@create');
 
 
     // Rutas para imprimir cartas
@@ -31,8 +34,10 @@
     Route::get('/imprimirPreguntas', 'ImprimirController@getPreguntas');
     Route::post('/imprimirTablero', 'ImprimirController@getTablero');
 
+
+
     // Solo cuando estas identificado tiene que aparecer estas rutas
-    Route::group(['middleware ' => 'auth'], function () {
+    Route::group(['middleware ' => 'auth'], function () {   
 
         Route::GET('/crearPeticion', function(){
             // Comprobamos si el usuario esta logeado

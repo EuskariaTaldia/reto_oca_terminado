@@ -13,18 +13,18 @@ class CreatePreguntasTable extends Migration
      */
     public function up()
     {
-        Schema::create('preguntas', function (Blueprint $table) {
-            $table->bigIncrements('codPregun');
-            $table->primary('codPregun');
-            $table->string('resCorre');
-            $table->string('resFall1');
-            $table->string('resFall1');
-            $table->integer('codMujer')->unsigned();
+        // Schema::create('preguntas', function (Blueprint $table) {
+        //     $table->bigIncrements('codPregun');
+        //     $table->primary('codPregun');
+        //     $table->string('resCorre');
+        //     $table->string('resFall1');
+        //     $table->string('resFall1');
+        //     $table->integer('codMujer')->unsigned();
             
-            // Relaciones
-            $table->foreign('codMujer')->references('codMujer')->on('mujeres');
+        //     // Relaciones
+        //     $table->foreign('codMujer')->references('codMujer')->on('mujeres');
 
-        });
+        // });
     }
 
     /**
@@ -34,6 +34,6 @@ class CreatePreguntasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('preguntas');
+        //Schema::dropIfExists('preguntas');
     }
 }

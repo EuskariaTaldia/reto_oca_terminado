@@ -13,14 +13,14 @@ class CreateZonasTable extends Migration
      */
     public function up()
     {
-        Schema::create('zonas', function (Blueprint $table) {
-            $table->bigIncrements('codZona');
-            $table->primary('codZona');
-            $table->string('zona');
-            $table->string('zona_ing');
-            $table->string('zona_eus');
+        // Schema::create('zonas', function (Blueprint $table) {
+        //     $table->bigIncrements('codZona');
+        //     $table->primary('codZona');
+        //     $table->string('zona');
+        //     $table->string('zona_ing');
+        //     $table->string('zona_eus');
 
-        });
+        // });
     }
 
     /**
@@ -30,6 +30,6 @@ class CreateZonasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('zonas');
+        //Schema::dropIfExists('zonas');
     }
 }

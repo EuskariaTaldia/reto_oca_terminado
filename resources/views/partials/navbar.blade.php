@@ -25,7 +25,7 @@
                 
                 <li class="nav-item dropdown  {{ Request::is('imprimir') && ! Request::is('imprimir/informacion')? 'active' : ''}}">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown
+                        Galeria
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{url('/imprimirGaleria')}}">Informacion</a>
@@ -58,17 +58,16 @@
                 <li class="nav-item">
                     {{-- Comprobamos si el usuario esta iniciado --}}
                     @if(Auth::check())
-                        <h6>{{ $usuario ?? '' }}</h6>
                         <form action="{{ url('/logout') }}" method="POST" class="navForm">
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-link nav-link">
-                                Cerrar sesión
+                                Cerrar sesión -> {{$usuario ?? ''}}
                             </button>
                         </form>
                         
                     @else        
                                     
-                        <form action="{{ url('/myLogin') }}" method="POST" class="navForm loginBtn">
+                        <form action="{{ url('/login') }}" method="GET" class="navForm loginBtn">
                             {{ csrf_field() }}
                             <button type="submit" class="btn btn-link nav-link fa fa-user">
                                 Iniciar sesión

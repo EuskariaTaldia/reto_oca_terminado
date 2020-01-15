@@ -13,13 +13,13 @@ class CreateAreasTable extends Migration
      */
     public function up()
     {
-        Schema::create('areas', function (Blueprint $table) {
-            $table->bigIncrements('codArea');
-            $table->primary('codArea');
-            $table->string('area');
-            $table->string('area_ing');
-            $table->string('area_eus');
-        });
+        // Schema::create('areas', function (Blueprint $table) {
+        //     $table->bigIncrements('codArea');
+        //     $table->primary('codArea');
+        //     $table->string('area');
+        //     $table->string('area_ing');
+        //     $table->string('area_eus');
+        // });
     }
 
     /**
@@ -29,6 +29,6 @@ class CreateAreasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('areas');
+        //Schema::dropIfExists('areas');
     }
 }

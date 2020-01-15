@@ -1,10 +1,11 @@
 <?php
-    namespace App\Http\Controllers;
-    use Illuminate\Http\Request;
-    use Auth;
-    use App\User;
-    use App\Area;
-    use App\Zona;
+
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use Auth;
+use App\User;
+use App\Area;
+use App\Zona;
 
     class HomeController extends Controller {
         /**
@@ -21,12 +22,14 @@
          *
          * @return \Illuminate\Contracts\Support\Renderable
          */
+        
         public function getIndex() {
             if(Auth::check() ) {
                 $usuario = Auth::user()->name;
             } else {
                 $usuario = "anonimo";
             }
+            
             $arrayZonas = Zona::all();
             $arrayAreas = Area::all();
                 

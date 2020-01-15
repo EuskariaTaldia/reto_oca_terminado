@@ -13,26 +13,26 @@ class CreateMujeresTable extends Migration
      */
     public function up()
     {
-        Schema::create('mujeres', function (Blueprint $table) {
-            $table->bigIncrements('codMujer');
-            $table->primary('codMujer');
-            $table->integer('codArea')->unique();
-            $table->string('nombre');
-            $table->string('fechas');
-            $table->string('subarea');
-            $table->text('datos');
-            $table->text('datos_eus');
-            $table->text('datos_ing');
-            $table->string('enlace');
-            $table->integer('codZona')->unique();
-            $table->string('zona');
-            $table->string('fotografia');           
+        // Schema::create('mujeres', function (Blueprint $table) {
+        //     $table->bigIncrements('codMujer');
+        //     $table->primary('codMujer');
+        //     $table->integer('codArea')->unique();
+        //     $table->string('nombre');
+        //     $table->string('fechas');
+        //     $table->string('subarea');
+        //     $table->text('datos');
+        //     $table->text('datos_eus');
+        //     $table->text('datos_ing');
+        //     $table->string('enlace');
+        //     $table->integer('codZona')->unique();
+        //     $table->string('zona');
+        //     $table->string('fotografia');           
 
             
-            // Relaciones
-            $table->foreign('codArea')->references('codArea')->on('areas');
-            $table->foreign('codZona')->references('codZona')->on('zonas');
-        });
+        //     // Relaciones
+        //     $table->foreign('codArea')->references('codArea')->on('areas');
+        //     $table->foreign('codZona')->references('codZona')->on('zonas');
+        // });
     }
 
     /**
@@ -42,7 +42,7 @@ class CreateMujeresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mujeres');
+        //Schema::dropIfExists('mujeres');
     }
 
 
