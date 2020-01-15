@@ -1,3 +1,21 @@
+.dataContainer {
+max-width: 90%;
+}
+
+/* NAVEGACION */
+.navForm {
+    display: inline;
+}
+
+.navForm button{
+    cursor:pointer;
+}
+
+.loginBtn {
+    background-color: transparent;
+}
+
+
 /* INICIO */
 
 .input-group-text {
@@ -48,8 +66,10 @@
 }
 
 .logoTxt {
+    padding-top: 2%;
     display: table-cell;
     vertical-align: top;
+    color: white;
 }
 
 .rbJugadores {
@@ -61,6 +81,7 @@
 .inputJugadores {
     background: none !important;
     background-color: white !important;
+    padding-right: 2%;
 }
 
 .inputJugadores::-webkit-inner-spin-button,
@@ -86,7 +107,7 @@ form {
     padding: 16px;
     border-radius: 10px;
     margin: auto;
-    background-color: #ccc;
+    /* background-color: #ccc; */
 }
 
 form label {
@@ -240,19 +261,6 @@ body {
     outline: none;
 }
 
-.logBtn {
-    max-width: 150px;
-    width: 100%;
-    background: #444444;
-    color: #f9f9f9;
-    border: none;
-    padding: 10px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    float: right;
-    cursor: pointer;
-    margin-top: 5%;
-}
 
 .login-show a {
     display: inline-block;
@@ -270,18 +278,6 @@ body {
     outline: none;
 }
 
-.logBtn {
-    max-width: 150px;
-    width: 100%;
-    background: #444444;
-    color: #f9f9f9;
-    border: none;
-    padding: 10px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    float: right;
-    cursor: pointer;
-}
 
 .credit {
     position: absolute;
@@ -297,6 +293,40 @@ body {
     letter-spacing: 1px;
     z-index: 99;
 }
+
+
+.logBtn {
+    max-width: 150px;
+    width: 100%;
+    background: #444444;
+    color: #f9f9f9;
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    float: right;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.logForm{
+    padding: 0;
+    border-radius: 10px;
+    margin: 0;
+   background-color: transparent;
+}
+
+.flexBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 
 /* INFORMACION */
@@ -317,19 +347,20 @@ body {
 
 /* GALERIA */
 .fondoFiltrado {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.137);
 }
-
-/* label, h2 {
-    color: white;
-} */
 
 .fondo {
     background-image: url(images/fondo2.png);
     /* opacity: 0.5; */
 }
 
-.cuadrado {
+.subtitulo {
+    text-align: center;
+    padding: 2%;
+}
+
+.circulo {
     width: 100px;
     height: 100px;
     border-radius: 50px;
@@ -338,6 +369,15 @@ body {
     align-items: center;
     margin: 5px;
 }
+
+.leyenda {
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(0, 0, 0);
+}
+
 
 .cartamujer {
     width: 250px;
@@ -391,4 +431,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.spanFecha  {
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
 }

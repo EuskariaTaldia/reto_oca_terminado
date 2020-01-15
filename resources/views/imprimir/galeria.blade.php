@@ -2,10 +2,16 @@
 
 @section('content')
 
-    <h2>Imprimir Galeria:<h2>
-    {{-- FILTRADO --}}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Galeria</li>
+        </ol>
+    </nav>
+
+    <!-- {{-- FILTRADO --}} -->
     <div class="fondoFiltrado">
-        <h2>Filtrado</h2>
+        <h2 class="subtitulo">Filtrado</h2>
         <div class="row myRow">
             <div class="form-group col">
                 <label for="estu">Estudios:</label>            
@@ -37,16 +43,7 @@
                 <div class="input-group">
 
                     <div class="input-group-prepend">
-                        <span class="input-group-text" style="
-                        padding-right: 0px;
-                        padding-bottom: 0px;
-                        padding-top: 0px;
-                        padding-left: 0px;
-                        border-right-width: 0px;
-                        border-top-width: 0px;
-                        border-bottom-width: 0px;
-                        border-left-width: 0px;">
-
+                        <span class="input-group-text spanFecha" >
                             <select class="custom-select" id="inputGroupSelect01">
                                 <option value="anio" selected>Año</option>
                                 <option value="siglo">Siglo</option>
@@ -68,21 +65,22 @@
     <div class="fondo">
         
         {{-- LEYENDA --}}
-        <h6 style="display: flex;justify-content: center;align-items: center;color:white">Leyenda</h6>
-        <div class="leyenda">
+        <h6  class="leyenda">LEYENDA</h6>
+        <div>
             <div class="row myRow d-flex justify-content-center" style="margin-bottom: 20px;">
-                <div class="cuadrado border-top border-left" style="background-color:#bf8000;">Historia</div>
-                <div class="cuadrado border-top border-left" style="background-color:white;">Derecho</div>
-                <div class="cuadrado border-top border-left" style="background-color:#ff8000;">Antropología</div>
-                <div class="cuadrado border-top border-left" style="background-color:#e30400;">Geografía</div>
-                <div class="cuadrado border-top border-left" style="background-color:#780053;color:white;">Filosofía</div>
-                <div class="cuadrado border-top border-left" style="background-color: #004cb0;">Psicología</div>
-                <div class="cuadrado border-top border-left" style="background-color:#ff6171;">Economía</div>
-                <div class="cuadrado border-top border-left" style="background-color:#ffea00;">Sociología</div>
-                <div class="cuadrado border-top border-left" style="background-color:#1aab00;">Pedagogía</div>
+                <div class="circulo border-top border-left" style="background-color:#bf8000;">Historia</div>
+                <div class="circulo border-top border-left" style="background-color:white;">Derecho</div>
+                <div class="circulo border-top border-left" style="background-color:#ff8000;">Antropología</div>
+                <div class="circulo border-top border-left" style="background-color:#e30400;">Geografía</div>
+                <div class="circulo border-top border-left" style="background-color:#780053;color:white;">Filosofía</div>
+                <div class="circulo border-top border-left" style="background-color: #004cb0;">Psicología</div>
+                <div class="circulo border-top border-left" style="background-color:#ff6171;">Economía</div>
+                <div class="circulo border-top border-left" style="background-color:#ffea00;">Sociología</div>
+                <div class="circulo border-top border-left" style="background-color:#1aab00;">Pedagogía</div>
             </div>
         </div>
     
+        <hr>
 
 
         {{-- INICIO DE CARTAS --}}

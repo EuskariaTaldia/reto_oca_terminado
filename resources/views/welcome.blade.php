@@ -11,9 +11,13 @@
 
         <!-- Styles -->
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
+            .imgBack {
+                background-image: url("../resources/images/fondo1.jpg");
+                background-size: cover;
+            }
+
+            html, body {            
+                color: white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -49,7 +53,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white !important;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -61,10 +65,15 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .btn {
+                color: white;
+            }
+
         </style>
     </head>
 
-    <body>
+    <body class="imgBack">
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md"> DESAYUNOS FEMINISTAS </div>
