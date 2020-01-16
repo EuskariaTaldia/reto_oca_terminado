@@ -1,5 +1,6 @@
 .dataContainer {
-max-width: 90%;
+    max-width: 100%;
+    padding: 0;
 }
 
 /* NAVEGACION */
@@ -28,11 +29,20 @@ max-width: 90%;
 }
 
 .icon-size {
-    font-size: 50px;
+    font-size: 30px;
+}
+
+.col-lg-8 {
+    padding: 0px !important;
+}
+
+.col-lg-4 {
+    padding: 0px !important;
 }
 
 .loginLink {
     color: white;
+    text-transform: uppercase;
 }
 
 .loginLink:hover {
@@ -40,15 +50,23 @@ max-width: 90%;
     text-decoration: none;
 }
 
+.submit-btn {
+    padding: 2% !important;
+    margin: 2% !important;
+}
+
+.breadcrumb{
+    padding-left: 10%;
+}
+
 
 /* INICIO */
-
 .input-group-text {
     width: 150px !important;
 }
 
 .modal-content {
-    background-color: rgba(128, 128, 128, 0.925);
+    background-color: rgba(255, 7, 234, 0.226);
 }
 
 .modal {
@@ -290,7 +308,6 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
-    overflow-y: hidden;
 }
 
 .login-reg-panel {
@@ -568,4 +585,54 @@ body {
     border-top-width: 0px;
     border-bottom-width: 0px;
     border-left-width: 0px;
+}
+
+
+/* TABLA PETICIONES */
+#settingsTable {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 3%;
+    background-color: #888;
+}
+
+#settingsTable input {
+    width: 100% !important ;
+}
+  
+#settingsTable tr:nth-of-type(odd) {
+    background-color: #47474763;
+}
+  
+.inputSetting {
+    border: none !important;
+    background-color: transparent !important;
+    width: 130px !important;
+    height: 5px !important;
+    padding: 10px 10px !important;
+    text-align: center;
+}
+
+.confirmModal{
+    z-index: 5;
+}
+
+/*  */
+#sailorTableArea{
+    max-height: 300px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+#sailorTable{
+    white-space: normal;
+}
+tbody {
+    display:block;
+    height:200px;
+    overflow:auto;
+}
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
 }

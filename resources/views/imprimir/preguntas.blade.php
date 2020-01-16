@@ -8,15 +8,13 @@
             <li class="breadcrumb-item active" aria-current="page">Preguntas</li>
         </ol>
     </nav>
-
-    <h2>Imprimir listado con las preguntas:<h2>
         
     <div class="fondo">
 
         {{-- LEYENDA --}}
-        <h6 style="display: flex;justify-content: center;align-items: center;color:white">Leyenda</h6>
-        <div class="leyenda">
-            <div class="row d-flex justify-content-center" style="margin-bottom: 20px;">
+        <h6  class="leyenda">LEYENDA</h6>
+        <div>
+            <div class="row myRow d-flex justify-content-center" style="margin-bottom: 20px;">
                 <div class="circulo border-top border-left" style="background-color:#bf8000;">Historia</div>
                 <div class="circulo border-top border-left" style="background-color:white;">Derecho</div>
                 <div class="circulo border-top border-left" style="background-color:#ff8000;">Antropología</div>
@@ -27,7 +25,9 @@
                 <div class="circulo border-top border-left" style="background-color:#ffea00;">Sociología</div>
                 <div class="circulo border-top border-left" style="background-color:#1aab00;">Pedagogía</div>
             </div>
-        </div>  
+        </div>
+    
+        <hr>
 
 
         {{-- INICIO DE CARTAS --}}

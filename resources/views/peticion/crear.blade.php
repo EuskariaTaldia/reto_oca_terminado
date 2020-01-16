@@ -13,7 +13,7 @@
 
         <h2 class="title">Inserta los datos</h2>
 
-        <form method="POST" action="" class="contact-form row">
+        <form method="POST" action="{{ route('crearPeticion') }}" class="contact-form row">
         @csrf
             {{-- Nombre y apellidos --}}
             <div class="form-field col-lg-6">
@@ -29,7 +29,7 @@
              {{-- Fechas --}}
              <div class="form-field col-lg-6">
                 <input id="fecha" type="text" class="input-text js-input @error('fecha') is-invalid @enderror" name="fecha" placeholder="Ej: 1909-1990 // VI" required>
-                <label class="fecha" for="fecha">Fecha / Siglo</label>
+                <label class="label" for="fecha">Fecha / Siglo</label>
                 @error('fecha')
                     <span class="invalid-feedback" role="alert">
                         <strong> Escribe otra fecha </strong>
@@ -44,7 +44,7 @@
                         <option value="{{$areas['codArea']}}">{{$areas['area']}}</option>
                     @endforeach                
                 </select>                            
-                <label class="label" for="name">Area</label>
+                <label class="label" for="area">Area</label>
                 @error('area')
                     <span class="invalid-feedback" role="alert">
                         <strong>Area incorrecta</strong>
@@ -55,7 +55,7 @@
             
             {{-- Sub Area --}}
             <div class="form-field col-lg-6 ">
-                <input id="subArea" class="input-text js-input @error('subArea') is-invalid @enderror" type="text" placeholder="(ej: Historiadora del arte)">
+                <input id="subArea" class="input-text js-input @error('subArea') is-invalid @enderror" type="text" name="subArea" placeholder="(ej: Historiadora del arte)">
                 <label class="label" for="subArea">Sub Area</label>
                 @error('subArea')
                     <span class="invalid-feedback" role="alert">
@@ -131,9 +131,8 @@
             
 
 
-            <div class="form-field col-lg-12">
+            <div class="form-field col-lg-12 flexBtn ">                
                 <input class="submit-btn" type="reset" value="Borrar">
-
                 <input class="submit-btn" type="submit" value="Submit">
             </div>
         </form>

@@ -18,7 +18,7 @@ class CreatePreguntasTable extends Migration
         //     $table->primary('codPregun');
         //     $table->string('resCorre');
         //     $table->string('resFall1');
-        //     $table->string('resFall1');
+        //     $table->string('resFall2');
         //     $table->integer('codMujer')->unsigned();
             
         //     // Relaciones

@@ -66,8 +66,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(Request $request)
-    {
+    protected function create(Request $request)  {
         $emailDb = User::where('email', $request->email)->get();
 
         if (!count($emailDb)) {

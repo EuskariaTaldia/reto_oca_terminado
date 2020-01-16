@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="modal" id="myModal" style="background-image:url('../resources/images/feminismo.jpg');" >
+    <div class="modal" id="myModal" style="background-image:url('../resources/images/fondo2.jpg');" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -78,7 +78,7 @@
 
                     <div class="modal-footer">
                         <button type="reset" class="btn btn-secondary" data-dismiss="modal">Borrar</button>
-                        <button type="submit" class="btn btn-primary">Jugar</button>    
+                        <button type="submit" class="btn btn-dark">Jugar</button>    
                     </div>
 
                 </div>

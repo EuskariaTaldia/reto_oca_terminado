@@ -37,7 +37,7 @@
 
 
     // SOLAMENTE PARA LAS PRUEBAS
-    Route::get('/crearPeticion', 'PeticionController@getFormulario');
+    Route::get('/crearPeticion', 'PeticionController@getFormulario')->name('crearPeticion');
     Route::post('/crearPeticion', 'PeticionController@guardar');
 
     Route::get('/tablaPeticiones', 'PeticionController@getTabla');

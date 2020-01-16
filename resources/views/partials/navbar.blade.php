@@ -77,7 +77,6 @@
                                                         </p>
                                                     </div>
                                                     <div class="col-lg-8">
-                                                        <p class="text-left"><strong>{{$usuario->name ?? ''}}</strong></p>
                                                         <p class="text-left small">{{$usuario->email ?? ''}}</p>
                                                     </div>
                                                 </div>

@@ -1,9 +1,9 @@
 window.onload = iniciar;
 
 function iniciar() {
-    var modal = document.getElementById('myModal')
-    if (modal != null) {
-        modal.style.display = 'block';
+    var gameModal = document.getElementById('myModal')
+    if (gameModal != null) {
+        gameModal.style.display = 'block';
 
         // Comprobar si el valor del filtro cambia
         document.getElementById("filtro").addEventListener("change", nuevoValor);
