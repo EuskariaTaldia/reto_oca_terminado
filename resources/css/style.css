@@ -589,29 +589,20 @@ body {
 
 
 /* TABLA PETICIONES */
-#settingsTable {
+/* #settingsTable {
     margin-top: 100px;
     margin-bottom: 100px;
     padding: 3%;
     background-color: #888;
-}
+} */
 
-#settingsTable input {
-    width: 100% !important ;
-}
-  
-#settingsTable tr:nth-of-type(odd) {
-    background-color: #47474763;
-}
-  
-.inputSetting {
+
+.settingsTable input {
     border: none !important;
     background-color: transparent !important;
-    width: 130px !important;
-    height: 5px !important;
-    padding: 10px 10px !important;
-    text-align: center;
+    width: 100%;
 }
+
 
 .confirmModal{
     z-index: 5;

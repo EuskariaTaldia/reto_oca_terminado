@@ -8,7 +8,9 @@
                 <div class="modal-header">
                     <h5 class="modal-title">ELIGE TU MODO DE JUEGO</h5>
                 </div>
-
+                
+                <input type="hidden" id="arrayAreas" name="arrayAreas" value="{{$arrayAreas}}">
+                <input type="hidden" id="arrayZonas" name="arrayZonas" value="{{$arrayZonas}}">
 
                 <form method="POST" action="{{url('/imprimirTablero')}}" class="myForm">
                     @csrf
@@ -53,10 +55,6 @@
                                         <label class="input-group-text">Especificacion</label>
                                     </div>
 
-                                    <input type="hidden" id="arrayAreas" name="arrayAreas" value="{{$arrayAreas}}">
-                                    <input type="hidden" id="arrayZonas" name="arrayZonas" value="{{$arrayZonas}}">
-
-
                                     <select class="custom-select" name="especificacionSelect" id="especificacionSelect" required>
 
                                         {{-- Aqui deberia de ir un select que depende el anterior --}}
@@ -83,6 +81,7 @@
 
                 </div>
             </form>
+
         </div>
     </div>
 

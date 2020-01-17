@@ -42,16 +42,20 @@
                 </tr>
                 
                 <tr>
-                    <td>Donna</td>
-                    <td>Snider</td>
-                    <td>Customer Support</td>
-                    <td>New York</td>
-                    <td>27</td>
-                    <td>2011/01/25</td>
-                    <td>$112,000</td>
-                    <td>4226</td>
-                    <td>d.snider@ datatables.net</td>
-                </tr>
+                    @foreach ($arrayPeticiones as $peticion)
+                        <td>Donna</td>
+                        <td>Snider</td>
+                        <td>Customer Support</td>
+                        <td>New York</td>
+                        <td>27</td>
+                        <td>2011/01/25</td>
+                        <td>$112,000</td>
+                        <td>4226</td>
+                        <td>d.snider@ datatables.net</td>
+                    </tr>
+
+                    @endforeach
+
             </tbody>
         </table>
     </div>
@@ -61,59 +65,55 @@
 
 
     {{--  --}}
-    <div class="well">
-
     <div class="table-responsive" id="sailorTableArea">
-        <table id="sailorTable" class="table table-striped table-bordered" width="100%">
+        <table id="sailorTable" class="table table-striped table-bordered settingsTable" width="100%">
             <thead>
                 <tr>
+                    <th>Usuario</th>
                     <th>Nombre</th>
                     <th>Fechas</th>
                     <th>Area</th>
                     <th>Subarea</th>
-                    <th>Zona Geografica</th>
+                    <th>Localidad</th>
                     <th>País</th>
                     <th>Foto</th>
                     <th>URL</th>
                     <th>Información</th>
+                    <th>Opciones</th>
                 </tr>
             </thead>
 
             <tbody>
                 <tr>
                     @foreach ($arrayPeticiones as $peticion)
+                        <td id="nombreMujer"> <input class="inputSetting" type="text" id="usuario" name="usuario" value="{{$peticion["codUsu"]}}" readonly></td>
                         <td id="nombreMujer"> <input class="inputSetting" type="text" id="nombreMujer" name="nombreMujer" value="{{$peticion["nombreMujer"]}}" readonly></td>
-                        <td id="fechas"> <input class="inputSetting " type="text" name="fechas" value="{{$peticion["fechas"]}}" readonly></td>
-                        <td id="codArea"> <input class="inputSetting " type="text" name="codArea" value="{{$peticion["codArea"]}}" readonly></td>
-                        <td id="subArea"> <input class="inputSetting " type="text" name="subArea" value="{{$peticion["subArea"]}}" readonly></td>
-                        <td id="zonaGeografica"> <input class="inputSetting " type="text" name="zona" value="{{$peticion["codZona"]}}" readonly></td>
-                        <td id="pais"> <input class="inputSetting " type="text" name="pais" value="{{$peticion["zona"]}}" readonly></td>
-                        <td id="foto"> <input class="inputSetting " type="text" name="foto" value="{{$peticion["fotografia"]}}" readonly></td>
-                        <td id="enlace"> <input class="inputSetting " type="text" name="enlace" value="{{$peticion["enlace"]}}" readonly></td>
-                        <td id="datos"> <input class="inputSetting " type="text" name="datos" value="{{$peticion["datos"]}}" readonly></td>
+                        <td id="fechas"> <input class="inputSetting" type="text" name="fechas" value="{{$peticion["fechas"]}}" readonly></td>
+                        <td id="codArea"> <input class="inputSetting" type="text" name="codArea" value="{{$peticion["codArea"]}}" readonly></td>
+                        <td id="subArea"> <input class="inputSetting" type="text" name="subArea" value="{{$peticion["subArea"]}}" readonly></td>
+                        <td id="zonaGeografica"> <input class="inputSetting" type="text" name="zona" value="{{$peticion["codZona"]}}" readonly></td>
+                        <td id="pais"> <input class="inputSetting" type="text" name="pais" value="{{$peticion["zona"]}}" readonly></td>
+                        <td id="foto"> <input class="inputSetting" type="text" name="foto" value="{{$peticion["fotografia"]}}" readonly></td>
+                        <td id="enlace"> <input class="inputSetting" type="text" name="enlace" value="{{$peticion["enlace"]}}" readonly></td>
+                        <td id="datos"> <input class="inputSetting" type="text" name="datos" value="{{$peticion["datos"]}}" readonly></td>
                         <td>
                             <!-- BOTONES DE LAS OPCIONES CORRESPONDIENTES -->
-                            <td>
-                                <!-- BOTONES DE LAS OPCIONES CORRESPONDIENTES -->
-                                <div class="commentsIcon">
-                                    <button type="submit" name="btnDeleteUser">
-                                        <i class="fa fa-lg fa-trash-o"></i>
-                                    </button>
+                            <div class="commentsIcon">
+                                <button type="submit" name="btnDeleteUser">
+                                    <i class="fa fa-lg fa-trash-o"></i>
+                                </button>
 
-                                    <button type="button" name="btnEditUser" href="#confirmModal" data-toggle="modal">
-                                        <i class="fa fa-lg fa-edit iconEditUser"></i>
-                                    </button>
+                                <button type="button" name="btnEditUser" href="#confirmModal" data-toggle="modal">
+                                    <i class="fa fa-lg fa-edit iconEditUser"></i>
+                                </button>
 
-                                </div>
-                            </td>       
-                            
+                            </div>                            
                         </td>
                 </tr>
                     @endforeach
             </tbody>
 
         </table>
-    </div>
 
     <div class="modal small hide fade confirmModal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
         <div class="modal-header">
