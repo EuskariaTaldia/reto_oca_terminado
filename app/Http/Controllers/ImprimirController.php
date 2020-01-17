@@ -55,8 +55,6 @@ class ImprimirController extends Controller  {
 
 
     public function getTablero(Request $request) {
-        // return $request->input('especificacionSelect');
-
         $gameType = $request->input('gameType');
         $especificacion = $request->input('especificacionSelect');
         $jugador = $request->input('jugador');

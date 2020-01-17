@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="modal" id="myModal" style="background-image:url('../resources/images/fondo2.jpg');" >
+    <div class="modal" id="myModal" style="background-image:url('../public/images/fondo2.jpg');" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -34,12 +34,12 @@
 
 
                                 {{-- FILTRO --}}
-                                <div class="input-group mb-3">
+                                <div class="input-group mb-3" id="filtrado" style="display:none;">
                                     <div class="input-group-prepend">
                                         <label class="input-group-text">Filtro</label>
                                     </div>
                                     
-                                    <select class="custom-select" name="filtro" id="filtro" required>
+                                    <select class="custom-select" name="filtro" id="filtradoSelect" required>
                                         {{-- Aqui deberia de ir un select a la base de datoss --}}
                                         <option value="azar" selected>Al azar</option>
                                         <option value="campo">Campo</option>

@@ -46,7 +46,7 @@
 }
 
 .loginLink:hover {
-    color: #ff38c0;
+    color: rgb(182, 0, 167);    
     text-decoration: none;
 }
 
@@ -589,13 +589,6 @@ body {
 
 
 /* TABLA PETICIONES */
-/* #settingsTable {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    padding: 3%;
-    background-color: #888;
-} */
-
 
 .settingsTable input {
     border: none !important;
@@ -603,27 +596,40 @@ body {
     width: 100%;
 }
 
-
-.confirmModal{
-    z-index: 5;
-}
-
-/*  */
 #sailorTableArea{
     max-height: 300px;
     overflow-x: auto;
     overflow-y: auto;
+    padding: 4%;
 }
+
 #sailorTable{
     white-space: normal;
 }
+
 tbody {
     display:block;
     height:200px;
     overflow:auto;
 }
+
 thead, tbody tr {
     display:table;
     width:100%;
     table-layout:fixed;
+}
+
+.commentsIcon{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: right; 
+    width: 5% !important;
+}
+  
+.commentsIcon button {
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: center;
 }
