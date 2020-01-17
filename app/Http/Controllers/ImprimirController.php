@@ -55,8 +55,13 @@ class ImprimirController extends Controller  {
 
 
     public function getTablero(Request $request) {
+        if($request->input('especificacionSelect') != null){
+            $especificacion = $request->input('especificacionSelect');
+        } else {
+            $especificacion = "null";
+        }
+
         $gameType = $request->input('gameType');
-        $especificacion = $request->input('especificacionSelect');
         $jugador = $request->input('jugador');
 
         if(Auth::check() ) {

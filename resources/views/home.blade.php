@@ -27,8 +27,8 @@
                                     </div>
 
                                     <div class="custom-select rbJugadores">
-                                        <input type="radio" name="gameType" value="conPreguntas" checked> Con Preguntas<br>
-                                        <input type="radio" name="gameType" value="sinPreguntas"> Sin Preguntas<br>
+                                        <input type="radio" name="gameType" value="conPreguntas" id="conPreguntas" checked> Con Preguntas<br>
+                                        <input type="radio" name="gameType" value="sinPreguntas" id="sinPreguntas"> Sin Preguntas<br>
                                     </div>
                                 </div>
 
@@ -44,7 +44,6 @@
                                         <option value="azar" selected>Al azar</option>
                                         <option value="campo">Campo</option>
                                         <option value="zona">Geografico</option>
-                                        <option value="4">Siglo</option>
                                     </select>
                                 </div>
 
@@ -58,7 +57,8 @@
                                     <select class="custom-select" name="especificacionSelect" id="especificacionSelect" required>
 
                                         {{-- Aqui deberia de ir un select que depende el anterior --}}
-                                   
+                                        <option value="" style="visibility:hidden"></option>
+
                                     </select> 
                                 </div>
 

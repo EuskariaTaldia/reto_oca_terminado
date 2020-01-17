@@ -3,18 +3,26 @@ window.onload = iniciar;
 function iniciar() {
     var gameModal = document.getElementById('myModal');
 
-    if (gameModal != null) {
-        gameModal.style.display = 'block';
-        
-        // Comprobar el tipo de juego
-        var selected = $('input:radio[name=filtro]:checked').val();
-        var filtradoSelect = document.getElementById("filtradoSelect");
+    // Comprobar el tipo de juegos
+    var conPreguntas = document.getElementById("conPreguntas");
+    var sinPreguntas = document.getElementById("sinPreguntas");
+    
+    // Comprobar el filtrado 
+    var filtrado = document.getElementById("filtrado");
+    var filtradoSelect = document.getElementById("filtradoSelect");
 
-        if(selected != "conPreguntas"){
+
+    if (gameModal != null) {
+        gameModal.style.display = 'block';      
+
+        conPreguntas.addEventListener("change", function() {            
             filtrado.style.display = "none";
-        }else {
-            filtrado.style.display = "block";
-        }
+        });
+
+        sinPreguntas.addEventListener("change", function() {
+            filtrado.style.display = "flex";
+        });
+
 
         // Comprobar si el valor del filtro cambia
         filtradoSelect.addEventListener("change", nuevoValor);
@@ -23,12 +31,11 @@ function iniciar() {
 
     // Codigo para el login
     login();
-
 }
 
 
 function nuevoValor() {
-    var filtro = document.getElementById("filtro");
+    var filtro = document.getElementById("filtradoSelect");
     var filtroVal = filtro.value;
 
     var especificacion = document.getElementById("especificacion");
