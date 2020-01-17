@@ -82,20 +82,20 @@
             <tbody>
                 <tr>
                     @foreach ($arrayPeticiones as $peticion)
-                        <td id="nombreMujer"> <input class="inputSetting" type="text" id="usuario" name="usuario" value="{{$peticion["codUsu"]}}" readonly></td>
-                        <td id="nombreMujer"> <input class="inputSetting" type="text" id="nombreMujer" name="nombreMujer" value="{{$peticion["nombreMujer"]}}" readonly></td>
-                        <td id="fechas"> <input class="inputSetting" type="text" name="fechas" value="{{$peticion["fechas"]}}" readonly></td>
-                        <td id="codArea"> <input class="inputSetting" type="text" name="codArea" value="{{$peticion["codArea"]}}" readonly></td>
-                        <td id="subArea"> <input class="inputSetting" type="text" name="subArea" value="{{$peticion["subArea"]}}" readonly></td>
-                        <td id="zonaGeografica"> <input class="inputSetting" type="text" name="zona" value="{{$peticion["codZona"]}}" readonly></td>
-                        <td id="pais"> <input class="inputSetting" type="text" name="pais" value="{{$peticion["zona"]}}" readonly></td>
-                        <td id="foto"> <input class="inputSetting" type="text" name="foto" value="{{$peticion["fotografia"]}}" readonly></td>
-                        <td id="enlace"> <input class="inputSetting" type="text" name="enlace" value="{{$peticion["enlace"]}}" readonly></td>
-                        <td id="datos"> <input class="inputSetting" type="text" name="datos" value="{{$peticion["datos"]}}" readonly></td>
+                        <td id="codUsu"> <input class="inputSetting" type="text" id="codUsu" name="usuario" value="{{$peticion["codUsu"]}}" readonly></td>
+                        <td id="nombreMujer"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" id="nombreMujer" name="nombreMujer" value="{{$peticion["nombreMujer"]}}" readonly></td>
+                        <td id="fechas"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="fechas" value="{{$peticion["fechas"]}}" readonly></td>
+                        <td id="codArea"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="codArea" value="{{$peticion["codArea"]}}" readonly></td>
+                        <td id="subArea"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="subArea" value="{{$peticion["subArea"]}}" readonly></td>
+                        <td id="zonaGeografica"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="zona" value="{{$peticion["codZona"]}}" readonly></td>
+                        <td id="pais"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="pais" value="{{$peticion["zona"]}}" readonly></td>
+                        <td id="foto"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="foto" value="{{$peticion["fotografia"]}}" readonly></td>
+                        <td id="enlace"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="enlace" value="{{$peticion["enlace"]}}" readonly></td>
+                        <td id="datos"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="datos" value="{{$peticion["datos"]}}" readonly></td>
                         <td>
                             <!-- BOTONES DE LAS OPCIONES CORRESPONDIENTES -->
                             <div class="commentsIcon">
-                                <button type="submit" name="btnDeleteUser">
+                                <button type="submit" name="btnDeleteUser" class="{{$peticion["nombreMujer"]}}">
                                     <i class="fa fa-lg fa-trash-o"></i>
                                 </button>
 

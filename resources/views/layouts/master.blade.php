@@ -36,7 +36,7 @@
 
     {{-- OUR SCRIPTS --}}
     <script src="../resources/js/myJavascript.js" ></script>
-
+    <script src="../resources/js/edit.js" ></script>
 
   </body>
 </html>

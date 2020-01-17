@@ -39,7 +39,7 @@
                                         <label class="input-group-text">Filtro</label>
                                     </div>
                                     
-                                    <select class="custom-select" name="filtro" id="filtradoSelect" required>
+                                    <select class="custom-select" name="filtro" id="filtradoSelect">
                                         {{-- Aqui deberia de ir un select a la base de datoss --}}
                                         <option value="azar" selected>Al azar</option>
                                         <option value="campo">Campo</option>
@@ -54,7 +54,7 @@
                                         <label class="input-group-text">Especificacion</label>
                                     </div>
 
-                                    <select class="custom-select" name="especificacionSelect" id="especificacionSelect" required>
+                                    <select class="custom-select" name="especificacionSelect" id="especificacionSelect">
 
                                         {{-- Aqui deberia de ir un select que depende el anterior --}}
                                         <option value="" style="visibility:hidden"></option>

@@ -54,7 +54,13 @@ class ImprimirController extends Controller  {
     }
 
 
-    public function getTablero(Request $request) {
+    public function getTablero(Request $request) {        
+        if(Auth::check() ) {
+            $usuario = Auth::user();
+        } else {
+            $usuario = "anonimo";
+        }
+
         if($request->input('especificacionSelect') != null){
             $especificacion = $request->input('especificacionSelect');
         } else {
@@ -64,11 +70,6 @@ class ImprimirController extends Controller  {
         $gameType = $request->input('gameType');
         $jugador = $request->input('jugador');
 
-        if(Auth::check() ) {
-            $usuario = Auth::user();
-        } else {
-            $usuario = "anonimo";
-        }
 
         return view('imprimir.tablero', compact("usuario", "gameType", "especificacion", "jugador"));
     }

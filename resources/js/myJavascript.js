@@ -11,16 +11,26 @@ function iniciar() {
     var filtrado = document.getElementById("filtrado");
     var filtradoSelect = document.getElementById("filtradoSelect");
 
+    // Comprobar la especificacion
+    var espFil = document.getElementById("especificacionSelect");
+
 
     if (gameModal != null) {
         gameModal.style.display = 'block';      
 
         conPreguntas.addEventListener("change", function() {            
             filtrado.style.display = "none";
+            document.getElementById("especificacion").style.display = "none";;
+
+            if(espFil.value != null){
+                espFil.value = null; 
+                filtradoSelect.value = "azar";
+            }
         });
 
         sinPreguntas.addEventListener("change", function() {
-            filtrado.style.display = "flex";
+            filtrado.style.display = "flex";          
+
         });
 
 
