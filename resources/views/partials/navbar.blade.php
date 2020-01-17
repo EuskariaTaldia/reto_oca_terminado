@@ -3,8 +3,8 @@
 
         <div class="logoDiv">
             <a class="navbar-brand" href="/ocaMujeres/public/home" style="color:#777">
-                <object data="../resources/images/logo.svg" type="image/svg+xml" class="logo">
-                    <img src="../resources/images/logo.png"/>
+                <object data="../public/images/logo.svg" type="image/svg+xml" class="logo">
+                    <img src="../public/images/logo.png"/>
                 </object> 
                 
                 <div class="logoTxt"> DESAYUNOS <br> FEMINISTAS </div>

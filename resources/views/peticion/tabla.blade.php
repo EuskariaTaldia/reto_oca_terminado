@@ -8,8 +8,7 @@
         </ol>
     </nav>
 
-    {{--  --}}
-
+    {{-- TABLA NUEVA
 
     <div class="table-responsive" id="sailorTableArea">
         <table id="sailorTable" class="table table-striped table-bordered" width="100%">
@@ -59,12 +58,9 @@
             </tbody>
         </table>
     </div>
+--}}
 
 
-
-
-
-    {{--  --}}
     <div class="table-responsive" id="sailorTableArea">
         <table id="sailorTable" class="table table-striped table-bordered settingsTable" width="100%">
             <thead>
@@ -106,7 +102,6 @@
                                 <button type="button" name="btnEditUser" href="#confirmModal" data-toggle="modal">
                                     <i class="fa fa-lg fa-edit iconEditUser"></i>
                                 </button>
-
                             </div>                            
                         </td>
                 </tr>
@@ -114,6 +109,8 @@
             </tbody>
 
         </table>
+
+    {{-- MODAL CONFIRMACION BORRAR
 
     <div class="modal small hide fade confirmModal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
         <div class="modal-header">
@@ -129,7 +126,7 @@
             <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
             <button class="btn btn-danger" data-dismiss="modal">Delete</button>
         </div>
-    </div>
+    </div> --}}
 
 
 @stop
