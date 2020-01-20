@@ -28,12 +28,12 @@ var TiradaSancionada=[];
         }
 
     }
-        var my_text=prompt('jokalari kopurua');
-        if(my_text) alert(my_text);
-        window.localStorage.setItem('turno',1);
-        window.localStorage.setItem('sancion',TiradaSancionada)
-        jokalariKopurua=my_text;
-        hasiera(jokalariKopurua);
+        // var my_text=prompt('jokalari kopurua');
+        // if(my_text) alert(my_text);
+        // window.localStorage.setItem('turno',1);
+        // window.localStorage.setItem('sancion',TiradaSancionada)
+        // jokalariKopurua=my_text;
+        // hasiera(jokalariKopurua);
 
 }
 function hasiera(jokalariKopurua){
