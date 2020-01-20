@@ -2,7 +2,10 @@
 
 @section('content')
 {{-- <script src="../resources/js/main.js"></script> --}}
-
+  <?php
+  $VAR = $_POST["gameType"];
+  echo($VAR);
+  ?>
     <h2>Imprimir tablero:<h2>
     {{-- MODAL PERDIDA DE TURNO --}}
     <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
