@@ -78,6 +78,7 @@
 }
 
 .backgroundImg {
+    background-image: url('../../public/images/fondo2.jpg');
     background-size: cover;
     position: relative;
     z-index: 1;
@@ -605,6 +606,8 @@ body {
 
 #sailorTable{
     white-space: normal;
+    background: white;
+
 }
 
 tbody {

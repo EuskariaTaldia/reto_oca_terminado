@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="modal" id="myModal" style="background-image:url('../public/images/fondo2.jpg');" >
+    <div class="modal backgroundImg" id="myModal" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

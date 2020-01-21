@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             .imgBack {
-                background-image: url("../resources/images/fondo1.jpg");
+                background-image: url("../public/images/fondo1.jpg");
                 background-size: cover;
             }
 

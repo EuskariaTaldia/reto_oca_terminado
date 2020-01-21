@@ -6,7 +6,7 @@
             <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
             <li class="breadcrumb-item active" aria-current="page">Peticiones</li>
         </ol>
-    </nav>
+    </nav>  
 
     {{-- TABLA NUEVA
 
@@ -61,7 +61,7 @@
 --}}
 
 
-    <div class="table-responsive" id="sailorTableArea">
+    <div class="table-responsive backgroundImg" id="sailorTableArea">
         <table id="sailorTable" class="table table-striped table-bordered settingsTable" width="100%">
             <thead>
                 <tr>
@@ -82,25 +82,101 @@
             <tbody>
                 <tr>
                     @foreach ($arrayPeticiones as $peticion)
-                        <td id="codUsu"> <input class="inputSetting" type="text" id="codUsu" name="usuario" value="{{$peticion["codUsu"]}}" readonly></td>
-                        <td id="nombreMujer"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" id="nombreMujer" name="nombreMujer" value="{{$peticion["nombreMujer"]}}" readonly></td>
-                        <td id="fechas"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="fechas" value="{{$peticion["fechas"]}}" readonly></td>
-                        <td id="codArea"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="codArea" value="{{$peticion["codArea"]}}" readonly></td>
-                        <td id="subArea"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="subArea" value="{{$peticion["subArea"]}}" readonly></td>
-                        <td id="zonaGeografica"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="zona" value="{{$peticion["codZona"]}}" readonly></td>
-                        <td id="pais"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="pais" value="{{$peticion["zona"]}}" readonly></td>
-                        <td id="foto"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="foto" value="{{$peticion["fotografia"]}}" readonly></td>
-                        <td id="enlace"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="enlace" value="{{$peticion["enlace"]}}" readonly></td>
-                        <td id="datos"> <input class="inputSetting {{$peticion["nombreMujer"]}}" type="text" name="datos" value="{{$peticion["datos"]}}" readonly></td>
+                        {{-- COMPROBACIONES --}}
+                        <?php
+                            switch($peticion["codArea"]) {
+                                case 1:
+                                    $codArea = "Historia";
+                                    break;
+
+                                case 2:
+                                    $codArea = "Derecho";
+                                    break;
+
+                                case 3:
+                                    $codArea = "Antropología";
+                                    break;
+
+                                case 4:
+                                    $codArea = "Geografía";
+                                    break;
+
+                                case 5:
+                                    $codArea = "Filosofía";
+                                    break;
+
+                                case 6:
+                                    $codArea = "Psicología";
+                                    break;
+
+                                case 7:
+                                    $codArea = "Economía";
+                                    break;
+                                case 8:
+                                    $codArea = "Sociología";
+                                    break;
+                                case 9:
+                                    $codArea = "Pedagogía";
+                                    break;
+                                default:
+                                    $codArea = "Desconocido";
+                                    break; 
+                            }    
+
+                            switch($peticion["codZona"]) {
+                                case 1:
+                                    $codZona = "Europa";
+                                    break;
+
+                                case 2:
+                                    $codZona = "Norteamérica";
+                                    break;
+
+                                case 3:
+                                    $codZona = "América Latina";
+                                    break;
+
+                                case 4:
+                                    $codZona = "Asia";
+                                    break;
+
+                                case 5:
+                                    $codZona = "Oceanía";
+                                    break;
+
+                                case 6:
+                                    $codZona = "África";
+                                    break;
+                       
+                                default:
+                                    $codZona = "Desconocido";
+                                    break;   
+                                }    
+                        ?>
+
+
+
+                        {{-- IMPRIMIR TABLA --}}
+
+                        <td id="codUsu"> <input class="inputSetting" type="text" name="usuario" value="{{$peticion["codUsu"]}}" readonly></td>
+                        <td id="nombreMujer"> <input class="inputSetting {{$peticion["codPeti"]}}" id="nombreMujer" type="text" name="nombreMujer" value="{{$peticion["nombreMujer"]}}" readonly></td>
+                        <td id="fechas"> <input class="inputSetting {{$peticion["codPeti"]}}" type="text" name="fechas" value="{{$peticion["fechas"]}}" readonly></td>
+                        <td id="codArea"> <input class="inputSetting {{$peticion["codPeti"]}}" type="text" name="codArea" value="{{$codArea}}" readonly></td>
+                        <td id="subArea"> <input class="inputSetting {{$peticion["codPeti"]}}" type="text" name="subArea" value="{{$peticion["subArea"]}}" readonly></td>
+                        <td id="zonaGeografica"> <input class="inputSetting {{$peticion["codPeti"]}}" type="text" name="zona" value="{{$codZona}}" readonly></td>
+                        <td id="pais"> <input class="inputSetting {{$peticion["codPeti"]}}" type="text" name="pais" value="{{$peticion["zona"]}}" readonly></td>
+                        <td id="foto"> <input class="inputSetting {{$peticion["codPeti"]}}" type="text" name="foto" value="{{$peticion["fotografia"]}}" readonly></td>
+                        <td id="enlace"> <input class="inputSetting {{$peticion["codPeti"]}}" type="text" name="enlace" value="{{$peticion["enlace"]}}" readonly></td>
+                        <td id="datos"> <input class="inputSetting {{$peticion["codPeti"]}}" type="text" name="datos" value="{{$peticion["datos"]}}" readonly></td>
                         <td>
                             <!-- BOTONES DE LAS OPCIONES CORRESPONDIENTES -->
                             <div class="commentsIcon">
-                                <button type="submit" name="btnDeleteUser" class="{{$peticion["nombreMujer"]}}">
+                                <button type="submit" name="btnDeletePeti" class="{{$peticion["codPeti"]}}">
                                     <i class="fa fa-lg fa-trash-o"></i>
                                 </button>
 
-                                <button type="button" name="btnEditUser" href="#confirmModal" data-toggle="modal">
-                                    <i class="fa fa-lg fa-edit iconEditUser"></i>
+                                <button type="button" name="btnEditPeti" href="#confirmModal" class="{{$peticion["codPeti"]}}" data-toggle="modal">
+                                    <i class="fa fa-lg fa-edit iconEditPeti"></i>
                                 </button>
                             </div>                            
                         </td>
