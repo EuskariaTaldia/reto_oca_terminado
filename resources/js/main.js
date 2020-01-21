@@ -29,8 +29,8 @@ var TiradaSancionada = [];
         for(var j=0;j<8;j++){
             console.log("gola");
             $(".tabla").append('<div id="' + mapArray[i][j] + '">' + mapArray[i][j] + '</div>');
-            for(var k=0;k<= jokalariKopurua;k++){
-                $('#'+mapArray[i][j]+'').append('<img class="'+k+'" src="../public/images/'+this.coloresJuga[k]+'.svg" style="display:none">')
+            for(var k=1;k<= jokalariKopurua;k++){
+                $('#'+mapArray[i][j]+'').append('<img class="ficha" src="../public/images/ficha'+this.coloresJuga[k-1]+'.png">')
                 }
         }
 
