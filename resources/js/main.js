@@ -8,58 +8,72 @@ var mapArray=[
     [27,28,29,30,31,32,33,8],
     [0,1,2,3,4,5,6,7]
 ];
-var jugadores =[];
-var casillasEspeciales=[6,12,19,31,42,26,53,58,63,5,9,14,18,23,27,32,36,41,45,50,54,59]
-var casillaOca=[5,9,14,18,23,27,32,36,41,45,50,54,59];
+
+var jugadores = [];
+var casillasEspeciales = [6, 12 , 19, 31, 42, 26, 53, 58, 63, 5, 9, 14, 18, 23, 27, 32, 36, 41, 45, 50, 54, 59]
+var casillaOca = [5, 9, 14, 18, 23, 27, 32, 36, 41, 45, 50, 54, 59];
 var MoverFicha;
-//tirada sanciona, como por ejempl al caer en el pozo, 
+
+// Tirada sanciona, como por ejemplo al caer en el pozo, 
 //es un  array de array con esta forma
 //[[jugador , sancion]
 //[ jugador , sancion]]
 //sanciones 1== 1 turno 2==  pozo  3== amaiera
 //se guardara en local storaje
-var TiradaSancionada=[];
-    window.onload=function()
-{
+var TiradaSancionada = [];
+
+window.onload = function() {
+
+    var tipoJuego = document.getElementById("tipoJuego").value;
+    var especificacion = document.getElementById("especificacion").value;
+    var jokalariKopurua = document.getElementById("jugador").value;
+
     for(var i=0;i<8;i++){
         for(var j=0;j<8;j++){
             console.log("gola");
-            $(".tabla").append('<div id="'+mapArray[i][j]+'">'+mapArray[i][j]+'</div>');
+            $(".tabla").append('<div id="' + mapArray[i][j] + '">' + mapArray[i][j] + '</div>');
         }
 
     }
-        var my_text=prompt('jokalari kopurua');
-        if(my_text) alert(my_text);
-        window.localStorage.setItem('turno',1);
-        window.localStorage.setItem('sancion',TiradaSancionada)
-        jokalariKopurua=my_text;
-        hasiera(jokalariKopurua);
+
+    // var my_text=prompt('jokalari kopurua');
+    // if(my_text) alert(my_text);
+
+    window.localStorage.setItem('turno', 1);
+    window.localStorage.setItem('sancion', TiradaSancionada)
+    // jokalariKopurua=my_text;
+    // alert(jokalariKopurua);
+    hasiera(jokalariKopurua);
 
 }
+
+
 function hasiera(jokalariKopurua){
 
-    var jokalariak=parseInt(jokalariKopurua,10);
+    var jokalariak = parseInt(jokalariKopurua, 10);
     // for que crear el array de jugadores
-    for(i=1;i<=jokalariak;i++){
-        var turno=0;
-        var casilla=0;
-        // el nombre del array es igual al numero del jugador
-        var nombre =[turno, casilla];
-        var Sancion =0;
+    for(i = 1 ; i <= jokalariak ; i++){
+        var turno = 0;
+        var casilla = 0;
+        // El nombre del array es igual al numero del jugador
+        var nombre = [turno, casilla];
+        var Sancion = 0;
         jugadores.push(nombre);
         TiradaSancionada.push(Sancion);
-
-        }
-        //guardamos el numero de jugadores
-    window.localStorage.setItem('numJuga',jugadores.length);
-    alert("jugador es 1");
+    }
+    
+    // Guardamos el numero de jugadores
+    window.localStorage.setItem('numJuga', jugadores.length);
+    alert("Jugadores -> " + jugadores.length);
 }
+
 function onclikar(){
-    jugador=window.localStorage.getItem('turno');
-    numJuga=window.localStorage.getItem('numJuga');
+    jugador = window.localStorage.getItem('turno');
+    numJuga = window.localStorage.getItem('numJuga');
 
-    tirada(jugador,numJuga);
+    tirada(jugador, numJuga);
 }
+
 function dado(){
     var die1 = document.getElementById("die1");
     var d1 = Math.floor(Math.random() * 6) + 1;
