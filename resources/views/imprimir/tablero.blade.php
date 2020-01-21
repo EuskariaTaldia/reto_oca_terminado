@@ -1,6 +1,7 @@
 @extends('layouts.tableroLayout')
 
 @section('content')
+<<<<<<< HEAD
   {{-- <script src="../resources/js/main.js"></script> --}}
 
   {{-- VALORES RECOGIDOS POR EL FORMULARIO --}}
@@ -10,6 +11,14 @@
   {{-- -------------------------------------------------------------------------------------------  --}}
 
 
+=======
+{{-- <script src="../resources/js/main.js"></script> --}}
+  <?php
+  $VAR = $_POST["gameType"];
+  echo($VAR);
+  ?>
+    <h2>Imprimir tablero:<h2>
+>>>>>>> 78cbbb15e4151c845b6d3c84349aeddeef504703
     {{-- MODAL PERDIDA DE TURNO --}}
   <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">

@@ -12,7 +12,7 @@
                 <input type="hidden" id="arrayAreas" name="arrayAreas" value="{{$arrayAreas}}">
                 <input type="hidden" id="arrayZonas" name="arrayZonas" value="{{$arrayZonas}}">
 
-                <form method="POST" action="{{url('/imprimirTablero')}}" class="myForm">
+                <form method="POST" action="{{url('/imprimirTablero')}}" class="myForm" id="PostJugar">
                     @csrf
 
                     <div class="modal-body">
