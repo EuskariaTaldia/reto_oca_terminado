@@ -473,6 +473,54 @@ body {
 
 
 
+/* TABLERO */
+.myContainer{
+    max-width: 100%;
+}   
+.grid-layout{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    grid-gap: 10px; /*grind-colum-gap*/
+
+}
+
+.sidecontenedor{
+    background-color: purple!important;
+    border-top: 2px solid black;
+    border-left: 2px solid black;  
+    border-right: 2px solid black;   
+    border-bottom: 2px solid black;   
+    float: left;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px!important;
+    margin-left: 0px!important;
+}
+
+
+.tablero{
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px !important;
+    margin-left: 0px!important;
+}
+
+.tabla div{
+    background-color: red;
+    border-top: 2px solid black;
+    border-left: 2px solid black;  
+    border-right: 2px solid black;   
+    border-bottom: 2px solid black;   
+
+}
+.tabla{
+display: grid;
+grid-gap: 10px; /*grind-colum-gap*/
+grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px;
+grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px ;
+text-align: center;
+}
 /* INFORMACION */
 .impFotoMujer {
     width: 400px;
