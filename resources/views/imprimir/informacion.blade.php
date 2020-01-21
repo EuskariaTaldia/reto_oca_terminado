@@ -4,7 +4,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
-            <li class="breadcrumb-item">Galeria</li>
+            <li class="breadcrumb-item active">Galeria</li>
             <li class="breadcrumb-item"><a href="{{url('/imprimirGaleria')}}">Informacion</a></li>
             <li class="breadcrumb-item active" aria-current="page">Informacion Mujer</li>
         </ol>
@@ -30,7 +30,7 @@
             <h5> Zona: {{$mujer->zona}}</h5>
             <h5> Datos:</h5><p> {{$mujer->datos}}</p>
 
-            <a class="btn btn-secondary" href="{{$mujer->enlace}}">Fuente</a>
+            <a class="btn btn-secondary" href="{{$mujer->enlace}}" target="_blank">Fuente</a>
             <input class="btn btn-dark" type="button" name="imprimir" value="Imprimir Datos" onclick="window.print();">
         </div>
     </div>    

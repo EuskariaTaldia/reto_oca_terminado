@@ -2,12 +2,12 @@
     <div class="container">
 
         <div class="logoDiv">
-            <a class="navbar-brand" href="/ocaMujeres/public/home" style="color:#777">
+            <a class="navbar-brand" href="/ocaMujeres/public/home">
                 <object data="../public/images/logo.svg" type="image/svg+xml" class="logo">
                     <img src="../public/images/logo.png"/>
                 </object> 
                 
-                <div class="logoTxt"> DESAYUNOS <br> FEMINISTAS </div>
+                <div class="logoTxt loginLink"> DESAYUNOS <br> FEMINISTAS </div>
             </a>
         </div>
 
@@ -27,12 +27,13 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Galeria
                     </a>
+                    
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{url('/imprimirGaleria')}}">Informacion</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{url('/imprimirPreguntas')}}">Preguntas</a>
                     </div>
-                  </li>
+                </li>
 
         
 
@@ -87,7 +88,7 @@
                                             <div class="navbar-login navbar-login-session">
                                                 <div class="row">
                                                     <div class="col-lg-12">
-                                                        <button type="submit" class="btn btn-danger btn-block"> Cerrar sesión </button>
+                                                        <button type="submit" class="btn btn-block cerrarBtn"> Cerrar sesión </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -100,7 +101,7 @@
                                     
                         <form action="{{ url('/login') }}" method="GET" class="navForm loginBtn">
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-link nav-link fa fa-user">
+                            <button type="submit" class="btn btn-link nav-link fa fa-user loginLink">
                                 Iniciar sesión
                             </button>
                            

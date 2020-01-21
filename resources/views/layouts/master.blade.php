@@ -11,8 +11,11 @@
     <!-- CSS PERSONAL -->
     <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
 
-    <title>Juego de la OCA</title>
+    <title>DESAYUNOS FEMINISTAS</title>
+    <link rel='shortcut icon' type='image/x-icon' href='../public/images/logo.png'/>
+
   </head>
+
   <body>
 
     {{-- INCLUDE SIN ; --}}
@@ -37,6 +40,9 @@
     {{-- OUR SCRIPTS --}}
     <script src="../resources/js/myJavascript.js" ></script>
     <script src="../resources/js/edit.js" ></script>
+    {{-- <script src="../resources/js/CreacionTablero.js"></script> --}}
+    {{-- <script src="../resources/js/main.js"></script> --}}
+
 
   </body>
 </html>
