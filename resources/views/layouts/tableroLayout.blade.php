@@ -11,18 +11,15 @@
     <!-- CSS PERSONAL -->
     <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
 
-    <title>DESAYUNOS FEMINISTAS</title>
-    <link rel='shortcut icon' type='image/x-icon' href='../public/images/logo.png'/>
-
+    <title>Juego de la OCA</title>
   </head>
-
   <body>
 
     {{-- INCLUDE SIN ; --}}
     @include('partials.navbar')
 
     {{-- INCLUIMOS UN CONTAINER QUE CADA PAGINA TENDRÁ SU CONTENIDO --}}
-    <div class="container dataContainer">
+    <div class="container myContainer">
         @yield('content')
     </div>
 
@@ -34,12 +31,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-
-    {{-- OUR SCRIPTS --}}
     <script src="../resources/js/myJavascript.js" ></script>
-    <script src="../resources/js/edit.js" ></script>
-    <script src="../resources/js/main.js"></script>
+     <script src="../resources/js/main.js"></script>
   </body>
 </html>

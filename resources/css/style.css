@@ -493,9 +493,11 @@ body {
     grid-template-rows: auto;
     grid-template-columns: auto auto;
     grid-gap: 10px; /*grind-colum-gap*/
-
+    
 }
-
+.ficha{
+    width: 10px;
+}
 .sidecontenedor{
     background-color: purple!important;
     border-top: 2px solid black;
@@ -551,7 +553,7 @@ text-align: center;
 /* GALERIA */
 .fondoFiltrado {
     background-color: rgba(0, 0, 0, 0.137);
-}
+}   
 
 .fondo {
     background-image: url(images/fondo2.png);

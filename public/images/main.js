@@ -1,13 +1,12 @@
-
-var mapArray = [
-    [21, 20, 19, 18, 17, 16, 15, 14],
-    [22, 43, 42, 41, 40, 39,38,13],
-    [23, 44, 57, 56, 55, 54,37,12],
-    [24, 45, 58, 63, 62, 53,36,11],
-    [25, 46, 59, 60, 61, 52,35,10],
-    [26, 47, 48, 49, 50, 51,34,9],
-    [27, 28, 29, 30, 31, 32,33,8],
-    [0, 1, 2, 3, 4, 5, 6, 7]
+var mapArray=[
+    [21,20,19,18,17,16,15,14],
+    [22,43,42,41,40,39,38,13],
+    [23,44,57,56,55,54,37,12],
+    [24,45,58,63,62,53,36,11],
+    [25,46,59,60,61,52,35,10],
+    [26,47,48,49,50,51,34,9],
+    [27,28,29,30,31,32,33,8],
+    [0,1,2,3,4,5,6,7]
 ];
 
 var jugadores = [];
@@ -22,53 +21,32 @@ var coloresJuga=["red","blue","green","yellow"]
 //sanciones 1== 1 turno 2==  pozo  3== amaiera
 //se guardara en local storaje
 var TiradaSancionada = [];
-<<<<<<< HEAD
 
-//window.onload = function() {
-    console.log("aa");
-=======
->>>>>>> ac894651f7719d7d0f99a85aeeaf42b7f52164f2
     var tipoJuego = document.getElementById("tipoJuego").value;
     var especificacion = document.getElementById("especificacion").value;
     var jokalariKopurua = document.getElementById("jugador").value;
 
     for(var i=0;i<8;i++){
         for(var j=0;j<8;j++){
-<<<<<<< HEAD
-            var newDiv = document.createElement("div");       
-            newDiv.id = (mapArray[i][j]);
-            var content = document.createTextNode(mapArray[i][j]); 
-            newDiv.appendChild(content); // Añade texto al div creado. 
-
-            var tablero = document.getElementById("tabla").appendChild(newDiv);
-        
-            // $(".tabla").append('<div id="' + mapArray[i][j] + '">' + mapArray[i][j] + '</div>');
-=======
             console.log("gola");
             $(".tabla").append('<div id="' + mapArray[i][j] + '">' + mapArray[i][j] + '</div>');
-            for(var k=1;k<= jokalariKopurua;k++){
-                $('#'+mapArray[i][j]+'').append('<img class="ficha" src="../public/images/ficha'+this.coloresJuga[k-1]+'.png">')
-                }
->>>>>>> ac894651f7719d7d0f99a85aeeaf42b7f52164f2
+        for(var k=0;k<=jokalariKopurua;k++){
+            $(".tabla").append('<img id="'+k+'" src="../public/images/'+this.coloresJuga[k]+'.svg" style="display:none">')
+            }
         }
 
-       
     }
-    
 
     // var my_text=prompt('jokalari kopurua');
     // if(my_text) alert(my_text);
+
     window.localStorage.setItem('turno', 1);
     window.localStorage.setItem('sancion', TiradaSancionada)
     // jokalariKopurua=my_text;
-    alert(jokalariKopurua);
+    // alert(jokalariKopurua);
     hasiera(jokalariKopurua);
-<<<<<<< HEAD
-    
-//}
 
-=======
->>>>>>> ac894651f7719d7d0f99a85aeeaf42b7f52164f2
+
 
 function hasiera(jokalariKopurua){
 
@@ -89,14 +67,12 @@ function hasiera(jokalariKopurua){
     alert("Jugadores -> " + jugadores.length);
 }
 
-
 function onclikar(){
     jugador = window.localStorage.getItem('turno');
     numJuga = window.localStorage.getItem('numJuga');
 
     tirada(jugador, numJuga);
 }
-
 
 function dado(){
     var die1 = document.getElementById("die1");
@@ -105,57 +81,33 @@ function dado(){
     // var pos =d1 + y;
     switch(d1){
         case d1=1:
-<<<<<<< HEAD
             die1.innerHTML = "<img src='../resources/images/dado1.png' alt='dado1'>";
-            break;
+        break;
         case d1=2:
             die1.innerHTML = "<img src='../resources/images/dado2.png' alt='dado2'>";
-            break;
+        break;
         case d1=3:
             die1.innerHTML = "<img src='../resources/images/dado3.png' alt='dado3'>";
-            break;
+        break;
         case d1=4:
             die1.innerHTML = "<img src='../resources/images/dado4.png' alt='dado4'>";
-            break;
+        break;
         case d1=5:
             die1.innerHTML = "<img src='../resources/images/dado5.png' alt='dado5'>";
-            break;
+        break;
         case d1=6:
             die1.innerHTML = "<img src='../resources/images/dado6.png' alt='dado6'>";
-            break;
-    }
-=======
-            die1.innerHTML = "<img src='../public/images/dado1.png' alt='dado1'>";
-        break;
-        case d1=2:
-            die1.innerHTML = "<img src='../public/images/dado2.png' alt='dado2'>";
-        break;
-        case d1=3:
-            die1.innerHTML = "<img src='../public/images/dado3.png' alt='dado3'>";
-        break;
-        case d1=4:
-            die1.innerHTML = "<img src='../public/images/dado4.png' alt='dado4'>";
-        break;
-        case d1=5:
-            die1.innerHTML = "<img src='../public/images/dado5.png' alt='dado5'>";
-        break;
-        case d1=6:
-            die1.innerHTML = "<img src='../public/images/dado6.png' alt='dado6'>";
         break;
         }
->>>>>>> ac894651f7719d7d0f99a85aeeaf42b7f52164f2
         return d1;
 }
-
-
-function tirada(jugador, numJuga){
-    var d1= dado(jugador,numJuga);
-    valores(jugador,d1);
-    cambiosPantalla(jugador,numJuga);
-}
-
-// Esta funcion define en el array "jugadores" los valores de las tiradas del "jugador"
-function valores(jugador, d1){
+function tirada(jugador,numJuga){
+       var d1= dado(jugador,numJuga);
+        valores(jugador,d1);
+        cambiosPantalla(jugador,numJuga);
+    }
+    ///esta funcion define en el arrai "jugadores" los valores de las tiradas del "jugador"
+function valores(jugador,d1){
  
     alert("acaba de tirar el jugador "+jugador)
     //definimos jugador en formato array "-1"

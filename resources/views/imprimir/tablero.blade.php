@@ -2,7 +2,6 @@
 
 @section('content')
 
-
   {{-- VALORES RECOGIDOS POR EL FORMULARIO --}}
     <input type="hidden" id="tipoJuego" name="tipoJuego" value="{{$gameType}}">
     <input type="hidden" id="especificacion" name="especificacion" value="{{$especificacion}}">
