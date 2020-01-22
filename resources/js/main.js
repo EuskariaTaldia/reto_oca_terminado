@@ -15,44 +15,39 @@ var casillasEspeciales = [6, 12 , 19, 31, 42, 26, 53, 58, 63, 5, 9, 14, 18, 23, 
 var casillaOca = [5, 9, 14, 18, 23, 27, 32, 36, 41, 45, 50, 54, 59];
 var MoverFicha;
 var coloresJuga=["red","blue","green","yellow"]
-// Tirada sanciona, como por ejemplo al caer en el pozo, 
-//es un  array de array con esta forma
-//[[jugador , sancion]
-//[ jugador , sancion]]
+// Tirada sanciona, como por ejemplo al caer en el pozo, es un  array de array con esta forma
+//[[jugador , sancion] [ jugador , sancion]]
 //sanciones 1== 1 turno 2==  pozo  3== amaiera
 //se guardara en local storaje
-var TiradaSancionada = [];
-<<<<<<< HEAD
 
-//window.onload = function() {
-    console.log("aa");
-=======
->>>>>>> ac894651f7719d7d0f99a85aeeaf42b7f52164f2
+var TiradaSancionada = [];
+
+window.addEventListener("load", iniciar);
+
+function iniciar() {     
+    var tablero = document.getElementById("tablero");
+        
+    if(tablero != null){
+        jugar();    
+    }
+}
+
+
+function jugar() {
+
     var tipoJuego = document.getElementById("tipoJuego").value;
     var especificacion = document.getElementById("especificacion").value;
     var jokalariKopurua = document.getElementById("jugador").value;
 
     for(var i=0;i<8;i++){
-        for(var j=0;j<8;j++){
-<<<<<<< HEAD
-            var newDiv = document.createElement("div");       
-            newDiv.id = (mapArray[i][j]);
-            var content = document.createTextNode(mapArray[i][j]); 
-            newDiv.appendChild(content); // Añade texto al div creado. 
-
-            var tablero = document.getElementById("tabla").appendChild(newDiv);
-        
-            // $(".tabla").append('<div id="' + mapArray[i][j] + '">' + mapArray[i][j] + '</div>');
-=======
+        for(var j=0;j<8;j++){        
             console.log("gola");
             $(".tabla").append('<div id="' + mapArray[i][j] + '">' + mapArray[i][j] + '</div>');
             for(var k=1;k<= jokalariKopurua;k++){
                 $('#'+mapArray[i][j]+'').append('<img class="ficha" src="../public/images/ficha'+this.coloresJuga[k-1]+'.png">')
-                }
->>>>>>> ac894651f7719d7d0f99a85aeeaf42b7f52164f2
-        }
-
-       
+            }        
+        
+        }       
     }
     
 
@@ -61,20 +56,15 @@ var TiradaSancionada = [];
     window.localStorage.setItem('turno', 1);
     window.localStorage.setItem('sancion', TiradaSancionada)
     // jokalariKopurua=my_text;
-    alert(jokalariKopurua);
-    hasiera(jokalariKopurua);
-<<<<<<< HEAD
-    
-//}
+     hasiera(jokalariKopurua);
+}
 
-=======
->>>>>>> ac894651f7719d7d0f99a85aeeaf42b7f52164f2
 
 function hasiera(jokalariKopurua){
 
     var jokalariak = parseInt(jokalariKopurua, 10);
     // for que crear el array de jugadores
-    for(i = 1 ; i <= jokalariak ; i++){
+    for(i = 1 ; i <= jokalariKopurua ; i++){
         var turno = 0;
         var casilla = 0;
         // El nombre del array es igual al numero del jugador
@@ -105,45 +95,24 @@ function dado(){
     // var pos =d1 + y;
     switch(d1){
         case d1=1:
-<<<<<<< HEAD
-            die1.innerHTML = "<img src='../resources/images/dado1.png' alt='dado1'>";
-            break;
-        case d1=2:
-            die1.innerHTML = "<img src='../resources/images/dado2.png' alt='dado2'>";
-            break;
-        case d1=3:
-            die1.innerHTML = "<img src='../resources/images/dado3.png' alt='dado3'>";
-            break;
-        case d1=4:
-            die1.innerHTML = "<img src='../resources/images/dado4.png' alt='dado4'>";
-            break;
-        case d1=5:
-            die1.innerHTML = "<img src='../resources/images/dado5.png' alt='dado5'>";
-            break;
-        case d1=6:
-            die1.innerHTML = "<img src='../resources/images/dado6.png' alt='dado6'>";
-            break;
-    }
-=======
             die1.innerHTML = "<img src='../public/images/dado1.png' alt='dado1'>";
-        break;
+            break;
         case d1=2:
             die1.innerHTML = "<img src='../public/images/dado2.png' alt='dado2'>";
-        break;
+            break;
         case d1=3:
             die1.innerHTML = "<img src='../public/images/dado3.png' alt='dado3'>";
-        break;
+            break;
         case d1=4:
             die1.innerHTML = "<img src='../public/images/dado4.png' alt='dado4'>";
-        break;
+            break;
         case d1=5:
             die1.innerHTML = "<img src='../public/images/dado5.png' alt='dado5'>";
-        break;
+            break;
         case d1=6:
             die1.innerHTML = "<img src='../public/images/dado6.png' alt='dado6'>";
-        break;
-        }
->>>>>>> ac894651f7719d7d0f99a85aeeaf42b7f52164f2
+            break;
+    }
         return d1;
 }
 

@@ -17,7 +17,22 @@ class Peticion extends Model
 
     // Columnas que contiene
     protected $fillable = [
-        'nombrePeti', 'datosPeti', 'codUsu',
+        'codUsu', 'nombreMujer', 'fechas', 'codArea', 'subArea', 'datos', 'enlace',
+        'codZona', 'zona', 'fotografia', 
+
     ];
+
+    // Relaciones
+    public function usuario() {
+        return $this->hasOne('App\User');
+    }
+
+    public function zona() {
+        return $this->hasOne('App\Zona');
+    }
+
+    public function area() {
+        return $this->hasOne('App\Area');
+    }
 
 }

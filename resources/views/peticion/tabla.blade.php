@@ -7,7 +7,7 @@
             <li class="breadcrumb-item active" aria-current="page">Peticiones</li>
         </ol>
     </nav>  
-
+    
     {{-- TABLA NUEVA
 
     <div class="table-responsive" id="sailorTableArea">

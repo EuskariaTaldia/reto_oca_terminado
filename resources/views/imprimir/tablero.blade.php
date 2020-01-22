@@ -8,10 +8,8 @@
     <input type="hidden" id="jugador" name="jugador" value="{{$jugador}}">
   {{-- -------------------------------------------------------------------------------------------  --}}
   
-  <script src="../resources/js/main.js"></script>
 
-
-    {{-- MODAL PERDIDA DE TURNO --}}
+  {{-- MODAL PERDIDA DE TURNO --}}
   <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -44,7 +42,7 @@
         <p>This is some text.</p>
       </div>
       
-      <div class="container tablero">            
+      <div class="container tablero" id="tablero">            
           
         <h2 id="tiro" style="clear:left;"></h2>
         <h2 id="turno" style="clear:left;"></h2>

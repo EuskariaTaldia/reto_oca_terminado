@@ -10,7 +10,7 @@ class Mujer extends Model
     protected $table = 'mujeres';
 
     // Primay key de la tabla
-    protected $primaryKey = 'codMujer';
+    protected $primaryKey = 'id';
 
     // Columnas que contiene
     protected $fillable = [

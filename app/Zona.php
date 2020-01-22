@@ -8,7 +8,7 @@ class Zona extends Model
 {
 
     // Nombre tabla
-    protected $table = 'zona';
+    protected $table = 'zonas';
 
     // Primay key de la tabla
     protected $primaryKey = 'codZona';
@@ -17,7 +17,6 @@ class Zona extends Model
     protected $fillable = [
         'zona', 'zona_ing', 'zona_eus',
     ];
-
 
     // Relaciones
     public function mujer() {

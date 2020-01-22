@@ -69,14 +69,14 @@
                                         <label class="input-group-text">Jugadores</label>
                                     </div>
                 
-                                    <input type="number" class="custom-select inputJugadores" min="1" max="5" value="1" name="jugador" required>
+                                    <input type="number" class="custom-select inputJugadores" min="1" max="4" value="1" name="jugador" required>
                                 </div>
                             </div>
                         </div>
 
                     <div class="modal-footer">
                         <button type="reset" class="btn btn-secondary" data-dismiss="modal">Borrar</button>
-                        <button type="submit" class="btn btn-dark">Jugar</button>    
+                        <button type="submit" class="btn btn-dark" id="btnJugar">Jugar</button>    
                     </div>
 
                 </div>
